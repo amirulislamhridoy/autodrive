@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
     return (
-        <nav class="mx-auto max-w-7xl border-gray-200 px-2 sm:px-4 py-2.5 rounded">
+        <nav class="mx-auto max-w-7xl sticky border-gray-200 px-2 sm:px-4 py-2.5 rounded">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
                 <Link href="/" class="flex items-center">
                     <img src="https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/logo-autodrive.png" class="h-6 mr-3 sm:h-9" alt="autodrive logo"></img>
