@@ -19,41 +19,6 @@ const OurLocations = () => {
             <h2 className='text-5xl font-semibold mb-3'>OUR LOCATIONS</h2>
             <p className='mb-5'>Odio eu viverra tincidunt tristique ullamcorper blandit dipiscing nunc risus integer at elementum cursus. Lorem justo a felis elit amet.</p>
             <img src='https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/elementor/thumbs/car-loc-pi9o4h5phh24x6795bkmwifpss8wxrs2tnxtj7pgs0.png' alt=''></img>
-            {/* <div class='flex gap-x-5 mt-6'>
-                {locations.slice(0, 4).map((location, i) => <div className='border p-5 shadow hover:mt-[-10px]' key={i}>
-                    <div class='flex items-center gap-x-2'>
-                        <i className="fa-solid fa-location-dot text-[#ffc947] text-xl"></i>
-                        <h3 className='text-2xl'>{location.name}</h3>
-                    </div>
-                    <p className='text-base'>{location.address}</p>
-                    <p className='text-base'>{location.call}</p>
-                </div>)}
-            </div> */}
-            {/* <Swiper
-                slidesPerView={4}
-                spaceBetween={10}
-                pagination={{
-                    clickable: true,
-                }}
-                autoplay={{
-                    delay: 1500,
-                    disableOnInteraction: false,
-                  }}
-                  navigation={true}
-                  modules={{Autoplay, Pagination, Navigation}}
-                className="mySwiper mt-7"
-                style={{ maxWidth: '100%' }}
-            >
-                {locations.map((location, i) => <SwiperSlide className='border p-5 shadow-lg bg-white' key={i}>
-                    <div class='flex items-center gap-x-2'>
-                        <i className="fa-solid fa-location-dot text-[#ffc947] text-xl"></i>
-                        <h3 className='text-2xl'>{location.name}</h3>
-                    </div>
-                    <p className='text-base'>{location.address}</p>
-                    <p className='text-base'>{location.call}</p>
-                </SwiperSlide>)}
-            </Swiper> */}
-
             <Swiper
                 slidesPerView={4}
                 spaceBetween={10}
@@ -71,7 +36,7 @@ const OurLocations = () => {
                 className='mySwiper mt-8'
                 style={{ maxWidth: '100%' }}
             >
-                {locations.map((location, i) => <SwiperSlide className='border p-5 pl-6 shadow-lg bg-white' key={i}>
+                {locations.map((location, i) => <SwiperSlide className='border p-5 pl-6 mb-4 drop-shadow-xl bg-white' key={i}>
                     <div class='flex items-center gap-x-2'>
                         <i className="fa-solid fa-location-dot text-[#ffc947] text-xl"></i>
                         <h3 className='text-2xl'>{location.name}</h3>

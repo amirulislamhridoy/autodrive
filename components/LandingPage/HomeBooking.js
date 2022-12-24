@@ -1,0 +1,15 @@
+const HomeBooking = () => {
+    return (
+        <section className='bg-center bg-cover bg-no-repeat text-white' style={{ backgroundImage: `url(${'https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/black-sedan-car-driving-bridge-road-e1670989974685.jpg'})` }}>
+            <div className='bg-gradient-to-r from-[rgba(0,0,0,0.7)] to-[rgba(0,0,0,0.7)]'>
+                <div className='py-16 max-w-7xl mx-auto'>
+                    <h2 class='text-5xl font-semibold'>Call Us Today For <br /> Booking Your Next Ride</h2>
+                    <p className='font-light my-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                    <button className='bg-[#ffc947] text-black px-6 py-2 rounded mt-3'>Contact Us</button>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default HomeBooking;
