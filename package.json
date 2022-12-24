@@ -16,7 +16,8 @@
     "next": "^13.0.8-canary.5",
     "react": "^18.2.0",
     "react-day-picker": "^8.4.1",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "swiper": "^8.4.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
