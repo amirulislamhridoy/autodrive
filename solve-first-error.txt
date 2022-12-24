@@ -1,0 +1,10 @@
+Error name: SWC Failed to Load
+first ai hoy tar soliution;
+solve: npm install next@canary
+
+next.js & vercel ar solition: https://nextjs.org/docs/messages/failed-loading-swc
+This can be fixed by removing the lockfile and regenerating it with a newer version of your package manager npm i -g npm@latest.
+If SWC continues to fail to load you can opt-out by disabling swcMinify in your next.config.js or by adding a .babelrc to your project with the following content:
+{
+  "presets": ["next/babel"]
+}
