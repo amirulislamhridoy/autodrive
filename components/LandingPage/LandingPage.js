@@ -16,9 +16,9 @@ const LandingPage = () => {
             <Banner></Banner>
             <OurLocations></OurLocations>
             <HomeBooking></HomeBooking>
+            <CarRentalService></CarRentalService>
             <Partners></Partners>
             <Ranking></Ranking>
-            <CarRentalService></CarRentalService>
             <Footer></Footer>
         </div>
     );
