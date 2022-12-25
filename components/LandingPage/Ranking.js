@@ -1,21 +1,21 @@
 const Ranking = () => {
     return (
-        <section>
-            <div>
-                <h1>68<span>+</span></h1>
-                <p>Brands of Car</p>
+        <section className='mx-auto max-w-7xl flex justify-around text-white py-16 bg-no-repeat' style={{background: `linear-gradient(rgba(10, 25, 49, 0.5), rgba(10, 25, 49, 0.7)), url('https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/classic-cars.jpg')`}}>
+            <div className='text-center'>
+                <h1 className="text-5xl font-bold">68<span className='text-[#ffc947]'>+</span></h1>
+                <p className=''>Brands of Car</p>
             </div>
-            <div>
-                <h1>96<span>%</span></h1>
-                <p>Happy Clients</p>
+            <div className='text-center'>
+                <h1 className="text-5xl font-bold flex justify-center items-center">96<span className='text-[#ffc947] text-3xl'>%</span></h1>
+                <p className=''>Happy Clients</p>
             </div>
-            <div>
-                <h1>10<span>+</span></h1>
-                <p>Locations</p>
+            <div className='text-center'>
+                <h1 className="text-5xl font-bold">10<span className='text-[#ffc947]'>+</span></h1>
+                <p className=''>Locations</p>
             </div>
-            <div>
-                <h1>15<span>+</span></h1>
-                <p>Years of Experience</p>
+            <div className='text-center'>
+                <h1 className="text-5xl font-bold">15<span className='text-[#ffc947]'>+</span></h1>
+                <p className=''>Years of Experience</p>
             </div>
         </section>
     );
