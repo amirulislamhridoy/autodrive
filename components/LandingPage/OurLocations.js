@@ -33,10 +33,10 @@ const OurLocations = () => {
                   }}
                 navigation={true}
                 modules={[ Navigation, Autoplay]}
-                className='mySwiper mt-8'
+                className='mySwiper mt-8 mx-2'
                 style={{ maxWidth: '100%' }}
             >
-                {locations.map((location, i) => <SwiperSlide className='border p-5 pl-6 mb-4 drop-shadow-xl bg-white' key={i}>
+                {locations.map((location, i) => <SwiperSlide className='border p-5 pl-6 mb-4 drop-shadow-xl bg-white rounded-lg' key={i}>
                     <div class='flex items-center gap-x-2'>
                         <i className="fa-solid fa-location-dot text-[#ffc947] text-xl"></i>
                         <h3 className='text-2xl'>{location.name}</h3>
@@ -45,7 +45,6 @@ const OurLocations = () => {
                     <p className='text-base'>{location.call}</p>
                 </SwiperSlide>)}
             </Swiper>
-
         </section>
     );
 };

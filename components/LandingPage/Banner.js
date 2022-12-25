@@ -26,7 +26,7 @@ const Banner = () => {
                                 <option value="3">Three</option>
                             </select>
 
-                            <input name="start" type="text" onFocus={(e) => e.target.type = 'date'} className="flex-1 block w-full py-4 px-4 outline-0" placeholder="Select Date" />
+                            <input name="start" type="text" onFocus={(e) => e.target.type = 'date'} className="flex-1 block w-full py-4 px-4 outline-0" placeholder="Start Date" />
                             <input name="start" type="text" onFocus={(e) => e.target.type = 'date'} className="flex-1 block w-full py-4 px-4 outline-0" placeholder="End Date " />
 
                             <button className='flex-1 bg-[#ffc947]'>

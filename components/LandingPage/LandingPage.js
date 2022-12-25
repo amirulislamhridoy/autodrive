@@ -2,6 +2,7 @@ import Banner from "./Banner";
 import Head from "next/head";
 import OurLocations from "./OurLocations";
 import HomeBooking from "./HomeBooking";
+import Partners from "./Partners";
 
 const LandingPage = () => {
     return (
@@ -12,6 +13,7 @@ const LandingPage = () => {
             <Banner></Banner>
             <OurLocations></OurLocations>
             <HomeBooking></HomeBooking>
+            <Partners></Partners>
         </div>
     );
 };
