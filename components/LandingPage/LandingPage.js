@@ -5,6 +5,7 @@ import HomeBooking from "./HomeBooking";
 import Partners from "./Partners";
 import Ranking from "./Ranking";
 import Footer from "../Footer";
+import CarRentalService from "./CarRentalService";
 
 const LandingPage = () => {
     return (
@@ -17,6 +18,7 @@ const LandingPage = () => {
             <HomeBooking></HomeBooking>
             <Partners></Partners>
             <Ranking></Ranking>
+            <CarRentalService></CarRentalService>
             <Footer></Footer>
         </div>
     );
