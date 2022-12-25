@@ -33,7 +33,7 @@ const OurLocations = () => {
                   }}
                 navigation={true}
                 modules={[ Navigation, Autoplay]}
-                className='mySwiper mt-8 mx-2'
+                className='mySwiper mt-8'
                 style={{ maxWidth: '100%' }}
             >
                 {locations.map((location, i) => <SwiperSlide className='border p-5 pl-6 mb-4 drop-shadow-xl bg-white rounded-lg' key={i}>

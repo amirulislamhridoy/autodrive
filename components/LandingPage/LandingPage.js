@@ -4,6 +4,7 @@ import OurLocations from "./OurLocations";
 import HomeBooking from "./HomeBooking";
 import Partners from "./Partners";
 import Ranking from "./Ranking";
+import Footer from "../Footer";
 
 const LandingPage = () => {
     return (
@@ -16,6 +17,7 @@ const LandingPage = () => {
             <HomeBooking></HomeBooking>
             <Partners></Partners>
             <Ranking></Ranking>
+            <Footer></Footer>
         </div>
     );
 };
