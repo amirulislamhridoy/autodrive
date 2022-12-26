@@ -20,7 +20,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <hr className='my-7'></hr>
-                <div className='sm:flex justify-between'>
+                <div className='md:flex justify-between'>
                     <ul>
                         <h4 className='text-xl font-bold mb-1 sm:mb-7 mt-4 sm:mt-0'>CONTACT US</h4>
                         <p className='text-[#545e70]'>021 Hollywood Bulevard, LA <br /> customer@example.com <br /> +8801500000</p>
