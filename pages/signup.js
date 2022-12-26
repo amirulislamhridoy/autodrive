@@ -1,20 +1,21 @@
-import Navbar from "../components/Navbar";
+// import React from 'react';
 import Head from "next/head";
-import { useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
+import Navbar from "../components/Navbar";
 
-const Login = () => {
+const Signup = () => {
     const [toggle, setToggle] = useState(false)
     return (
         <section>
-            <Head><title>Login</title></Head>
+            <Head><title>Sign up</title></Head>
             <Navbar>login</Navbar>
 
             <div className='mx-1 xl:mx-auto max-w-7xl flex justify-center lg:justify-between items-center mt-4 sm:mt-8 lg:mt-14 xl:mt-20 2xl:mt-32 mb-3'>
                 <div className='mg:w-6/12 xl:w-5/12 p-4 md:p-7 md:pt-10 border rounded-lg'>
                     <img className='bg-[#bbbbbb] mb-4' src='https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/logo-autodrive.png' alt=''></img>
                     <h2 className='text-2xl font-semibold mb-2.5'>Welcome back</h2>
-                    <p className='text-sm text-[#aaaaaa]'>Start your website in seconds. Don&apos;t have an account? <Link className='text-[#2c63ec] font-semibold' href='http://localhost:3000/signup' alt=''>Sign up</Link></p>
+                    <p className='text-sm text-[#aaaaaa]'>Start your website in seconds. Already have an account? <Link className='text-[#2c63ec] font-semibold' href='' alt=''>Login</Link></p>
                     <form className='mt-4 lg:mt-6'>
                         <div className='lg:flex justify-between'>
                             <div>
@@ -42,7 +43,7 @@ const Login = () => {
                             </div>
                             <Link className='text-[#2c63ec] font-semibold' href=''>Forgot password?</Link>
                         </div>
-                        <button type='submit' disabled={!toggle} className={`w-full border rounded-lg py-2 ${toggle ? 'bg-[#2c63ec] text-white': " text-gray-400" }`}>Login in to your account</button>
+                        <button type='submit' disabled={!toggle} className={`w-full border rounded-lg py-2 ${toggle ? 'bg-[#2c63ec] text-white' : " text-gray-400"}`}>Sign up in to your account</button>
                     </form>
                 </div>
                 <div className='hidden lg:block'>
@@ -53,4 +54,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Signup;
