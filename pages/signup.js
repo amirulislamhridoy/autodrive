@@ -6,30 +6,59 @@ import Navbar from "../components/Navbar";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from './../firebase.init';
 import { toast } from "react-toastify";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import Loading from "../components/Loading";
 
 const Signup = () => {
     const [toggle, setToggle] = useState(false)
     const router = useRouter()
     const [error, setError] = useState('')
-
+    const [loading, setLoading] = useState(false)
+    const provider = new GoogleAuthProvider();
     const formHandle = (e) => {
         e.preventDefault()
+        setLoading(true)
         const email = e.target.email.value
         const password = e.target.password.value
-
         createUserWithEmailAndPassword(auth, email, password)
             .then(userCredential => {
                 if (userCredential?.user?.uid) {
+                    setLoading(false)
                     toast.success('User is created')
                     router.push('/')
                     setError('')
                 }
             })
             .catch(error => {
+                setLoading(false)
                 setError(error.code)
                 toast.error(error.code)
             })
+    }
+    const googleLoginFn = () => {
+        setLoading(true)
+        signInWithPopup(auth, provider)
+            .then(result => {
+                // const credential = GoogleAuthProvider.credentialFromResult(result);
+                // const token = credential.accessToken;
+                // console.log('credential', credential)
+                // const user = result.user;
+                if(result?.user?.email){
+                    setLoading(false)
+                    setError('')
+                    toast.success('You are sign in by Google.')
+                    router.push('/')
+                }
+            })
+            .catch((error) => {
+                setLoading(false)
+                console.log(error)
+                setError(error.code)
+            })
+    }
+    if(loading){
+        return <Loading></Loading>
     }
     return (
         <section>
@@ -39,7 +68,7 @@ const Signup = () => {
             <div className='mx-1 xl:mx-auto max-w-7xl flex justify-center lg:justify-between items-center mt-4 sm:mt-8 lg:mt-14 xl:mt-20 2xl:mt-32 mb-3'>
                 <div className='mg:w-6/12 xl:w-5/12 p-4 md:p-7 md:pt-10 border rounded-lg'>
                     <img className='bg-[#bbbbbb] mb-4' src='https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/logo-autodrive.png' alt=''></img>
-                    <h2 className='text-2xl font-semibold mb-2.5'>Welcome back</h2>
+                    <h2 className='text-2xl font-semibold mb-2.5'>Welcome in Sign Up</h2>
                     <p className='text-sm text-[#aaaaaa]'>Start your website in seconds. Already have an account? <Link className='text-[#2c63ec] font-semibold' href='http://localhost:3000/login' alt=''>Login</Link></p>
                     <form className='mt-4 lg:mt-6' onSubmit={formHandle}>
                         <div className='lg:flex justify-between'>
@@ -59,16 +88,17 @@ const Signup = () => {
                             <span>or</span>
                             <hr className='w-full'></hr>
                         </div>
-                        <button className='w-full border rounded-lg flex px-3 py-2 hover:bg-gray-100'><img className='w-5' src='https://freesvg.org/img/1534129544.png' alt=''></img><span className='flex-1'>Sign in with Google</span></button>
+                        {error && <p style={{ color: 'red' }}>{error}</p>}
+                        <button onClick={googleLoginFn} className='w-full border rounded-lg flex px-3 py-2 hover:bg-gray-100'><img className='w-5' src='https://freesvg.org/img/1534129544.png' alt=''></img><span className='flex-1'>Sign in with Google</span></button>
                         <button className='w-full border rounded-lg flex px-3 py-2 hover:bg-gray-100 mt-5'><img className='w-5' src='https://cdn-icons-png.flaticon.com/512/25/25231.png' alt=''></img><span className='flex-1'>Sign in with Github</span></button>
                         <div className="flex justify-between my-6">
                             <div className=''>
                                 <input id='check' onChange={(e) => setToggle(e.target.checked)} className='mr-2' type='checkbox'></input>
                                 <label htmlFor='check'>Remember me</label>
                             </div>
-                            <Link className='text-[#2c63ec] font-semibold' href=''>Forgot password?</Link>
+                            {/* <Link className='text-[#2c63ec] font-semibold' href=''>Forgot password?</Link> */}
                         </div>
-                        {error && <p style={{color: 'red'}}>{error}</p>}
+                        {error && <p style={{ color: 'red' }}>{error}</p>}
                         <button type='submit' disabled={!toggle} className={`w-full border rounded-lg py-2 ${toggle ? 'bg-[#2c63ec] text-white' : " text-gray-400"}`}>Sign up in to your account</button>
                     </form>
                 </div>
