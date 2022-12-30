@@ -3,9 +3,24 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Signup = () => {
     const [toggle, setToggle] = useState(false)
+
+    const formHandle = (e) => {
+        e.preventDefault()
+        const email = e.target.email.value
+        const password = e.target.password.value
+        
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+            console.log(userCredential)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
     return (
         <section>
             <Head><title>Sign up</title></Head>
@@ -15,18 +30,18 @@ const Signup = () => {
                 <div className='mg:w-6/12 xl:w-5/12 p-4 md:p-7 md:pt-10 border rounded-lg'>
                     <img className='bg-[#bbbbbb] mb-4' src='https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/logo-autodrive.png' alt=''></img>
                     <h2 className='text-2xl font-semibold mb-2.5'>Welcome back</h2>
-                    <p className='text-sm text-[#aaaaaa]'>Start your website in seconds. Already have an account? <Link className='text-[#2c63ec] font-semibold' href='' alt=''>Login</Link></p>
-                    <form className='mt-4 lg:mt-6'>
+                    <p className='text-sm text-[#aaaaaa]'>Start your website in seconds. Already have an account? <Link className='text-[#2c63ec] font-semibold' href='http://localhost:3000/login' alt=''>Login</Link></p>
+                    <form className='mt-4 lg:mt-6' onSubmit={formHandle}>
                         <div className='lg:flex justify-between'>
                             <div>
                                 <label className='' htmlFor="email">Email</label>
                                 <br />
-                                <input id='email' className='lg:mt-2 px-3 py-2 border border-2 rounded-lg w-full' type='email' placeholder='user@example.com' required></input>
+                                <input id='email' name='email' className='lg:mt-2 px-3 py-2 border border-2 rounded-lg w-full' type='email' placeholder='user@example.com' required></input>
                             </div>
                             <div className='mt-2 lg:mt-0'>
-                                <label className='' htmlFor="password" required>Password</label>
+                                <label className='' htmlFor="password">Password</label>
                                 <br />
-                                <input id='password' className='lg:mt-2 px-3 py-2 border border-2 rounded-lg w-full' type='password' placeholder="******"></input>
+                                <input id='password' name='password' className='lg:mt-2 px-3 py-2 border border-2 rounded-lg w-full' type='password' placeholder="******" required></input>
                             </div>
                         </div>
                         <div className='flex my-6 justify-center items-center gap-x-5'>

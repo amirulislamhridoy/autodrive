@@ -23,9 +23,9 @@ const Login = () => {
                                 <input id='email' className='lg:mt-2 px-3 py-2 border border-2 rounded-lg w-full' type='email' placeholder='user@example.com' required></input>
                             </div>
                             <div className='mt-2 lg:mt-0'>
-                                <label className='' htmlFor="password" required>Password</label>
+                                <label className='' htmlFor="password">Password</label>
                                 <br />
-                                <input id='password' className='lg:mt-2 px-3 py-2 border border-2 rounded-lg w-full' type='password' placeholder="******"></input>
+                                <input id='password' className='lg:mt-2 px-3 py-2 border border-2 rounded-lg w-full' type='password' placeholder="******" required></input>
                             </div>
                         </div>
                         <div className='flex my-6 justify-center items-center gap-x-5'>
