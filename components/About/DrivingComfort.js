@@ -1,0 +1,18 @@
+import React from 'react';
+
+const DrivingComfort = () => {
+    return (
+        <section className='max-w-7xl mx-auto mt-16 grid grid-cols-10 gap-x-12'>
+            <div className='col-start-1 col-end-5 self-center'>
+                <p className='text-[#185ADB] font-bold'>WORKS</p>
+                <h2 className='text-4xl font-bold mt-2'>DRIVING COMFORT IS OUR PRIORITY</h2>
+                <p className='mt-6'>Quam diam nisi id viverra dui proin quisque. Ridiculus adipiscing feugiat justo, sagittis. Erat amet id netus faucibus.</p>
+            </div>
+            <div className='col-start-5 col-end-11'>
+                <iframe className='w-full' width="560" height="315" src="https://www.youtube.com/embed/H35hOow2dtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+    );
+};
+
+export default DrivingComfort;

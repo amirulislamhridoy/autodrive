@@ -2,6 +2,8 @@ import React from 'react';
 import Navbar from './../components/Navbar';
 import Head from 'next/head';
 import AboutContent from '../components/About/AboutContent';
+import DrivingComfort from '../components/About/DrivingComfort';
+import Footer from './../components/Footer'
 
 const about = () => {
     return (
@@ -16,6 +18,8 @@ const about = () => {
                 </div>
             </div>
             <AboutContent></AboutContent>
+            <DrivingComfort></DrivingComfort>
+            <Footer></Footer>
         </main>
     );
 };
