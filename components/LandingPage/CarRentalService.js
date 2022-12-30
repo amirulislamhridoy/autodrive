@@ -12,7 +12,7 @@ const CarRentalService = () => {
                             <i className="mr-1 text-sm fa-solid fa-star-half-stroke"></i>
                         </div>
                     </div>
-                    <h2 className='text-5xl font-bold md:my-4'>Car Rental Service With Smiling Prices</h2>
+                    <h2 className='text-xl sm:text-3xl lg:text-5xl font-bold md:my-4'>Car Rental Service With Smiling Prices</h2>
                     <p className='text-sm mb-4'>Tempus aliquet duis himenaeos maecenas efficitur senectus iaculis penatibus torquent. Mattis torquent praesent maecenas semper ac. Tellus mollis si turpis tristique faucibus a pretium dis.</p>
                     <button className='bg-[#ffc947] text-black px-4 md:px-6 py-2 rounded mt-1 md:mt-3'>More About Us</button>
                 </div>
