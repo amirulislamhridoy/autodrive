@@ -5,22 +5,31 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from './../firebase.init';
+import { toast } from "react-toastify";
+import { useRouter } from 'next/router'
 
 const Signup = () => {
     const [toggle, setToggle] = useState(false)
+    const router = useRouter()
+    const [error, setError] = useState('')
 
     const formHandle = (e) => {
         e.preventDefault()
         const email = e.target.email.value
         const password = e.target.password.value
-        
+
         createUserWithEmailAndPassword(auth, email, password)
-        .then(userCredential => {
-            console.log(userCredential)
-        })
-        .catch(error => {
-            console.log(error)
-        })
+            .then(userCredential => {
+                if (userCredential?.user?.uid) {
+                    toast.success('User is created')
+                    router.push('/')
+                    setError('')
+                }
+            })
+            .catch(error => {
+                setError(error.code)
+                toast.error(error.code)
+            })
     }
     return (
         <section>
@@ -59,6 +68,7 @@ const Signup = () => {
                             </div>
                             <Link className='text-[#2c63ec] font-semibold' href=''>Forgot password?</Link>
                         </div>
+                        {error && <p style={{color: 'red'}}>{error}</p>}
                         <button type='submit' disabled={!toggle} className={`w-full border rounded-lg py-2 ${toggle ? 'bg-[#2c63ec] text-white' : " text-gray-400"}`}>Sign up in to your account</button>
                     </form>
                 </div>
