@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import auth from './../firebase.init';
 
 const Signup = () => {
     const [toggle, setToggle] = useState(false)
