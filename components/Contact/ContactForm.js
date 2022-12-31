@@ -8,7 +8,7 @@ const ContactForm = () => {
     return (
         <section className='max-w-7xl mx-auto'>
             <p className='text-[#bbbbbb] text-md sm:text-xl font-bold mt-10'>CONTACT US</p>
-            <h2 className='text-2xl font-bold sm:text-4xl'>GET IN TOUCH</h2>
+            <h2 className='text-2xl font-bold sm:text-4xl sm:mt-2 md:mt-4'>GET IN TOUCH</h2>
             <article className='mt-1 sm:mt-2 text-justify'>
                 Odio eu viverra tincidunt tristique ullamcorper blandit dipiscing nunc risus integer at elementum cursus. Lorem justo a felis elit amet.
             </article>
@@ -48,17 +48,17 @@ const ContactForm = () => {
                 </form>
                 <div className='flex-1 flex flex-col gap-y-10 items-center justify-center'>
                     <div className='flex flex-col items-center justify-center w-full py-3' style={{ backgroundColor: '#f4f6fa' }}>
-                        <i class="text-2xl rounded-full py-4 px-5 bg-[#f6e8de] fa-solid fa-location-pin"></i>
+                        <i className="text-2xl rounded-full py-4 px-5 bg-[#f6e8de] fa-solid fa-location-pin"></i>
                         <h4 className='text-xl font-bold mt-3'>ADDRESS</h4>
                         <p className='mt-2'>Mohakhali Bazar, Dhaka 1212</p>
                     </div>
                     <div className='flex flex-col items-center justify-center w-full py-3' style={{ backgroundColor: '#f4f6fa' }}>
-                        <i class="text-2xl rounded-full py-4 px-4 bg-[#f6e8de]  fa-solid fa-envelope"></i>
+                        <i className="text-2xl rounded-full py-4 px-4 bg-[#f6e8de]  fa-solid fa-envelope"></i>
                         <h4 className='text-xl font-bold mt-3'>EMAIL</h4>
                         <p className='mt-2'>example@gamil.com</p>
                     </div>
                     <div className='flex flex-col items-center justify-center w-full py-3' style={{ backgroundColor: '#f4f6fa' }}>
-                        <i class="text-2xl rounded-full py-4 px-4 bg-[#f6e8de]  fa-solid fa-phone"></i>
+                        <i className="text-2xl rounded-full py-4 px-4 bg-[#f6e8de]  fa-solid fa-phone"></i>
                         <h4 className='text-xl font-bold mt-3'>PHONE</h4>
                         <p className='mt-2'>(02) 323 23444</p>
                     </div>

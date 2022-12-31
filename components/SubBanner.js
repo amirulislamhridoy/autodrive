@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from './Navbar';
 
 const SubBanner = ({url, children}) => {
-    console.log(url)
     return (
         <div className='h-[337px] lg:h-[494px]' style={{background: `linear-gradient(rgba(10, 25, 49, 0.5), rgba(10, 25, 49, 0.5)), url(${url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
                 <Navbar></Navbar>

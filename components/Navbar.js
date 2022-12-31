@@ -34,6 +34,9 @@ const Navbar = ({ children }) => {
                                 <Link href="/" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route ==='/' && 'border-b-2'}`} aria-current="page">HOME</Link>
                             </li>
                             <li>
+                                <Link href="/services" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route ==='/services' && 'border-b-2'}`} aria-current="page">SERVICES</Link>
+                            </li>
+                            <li>
                                 <Link href="/about" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route ==='/about' && 'border-b-2'}`} aria-current="page">ABOUT</Link>
                             </li>
                             <li>
@@ -44,9 +47,6 @@ const Navbar = ({ children }) => {
                             </li>
                             <li>
                                 <Link href="/locations" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route ==='/locations' && 'border-b-2'}`} aria-current="page">LOCATIONS</Link>
-                            </li>
-                            <li>
-                                <Link href="/services" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route ==='/services' && 'border-b-2'}`} aria-current="page">SERVICES</Link>
                             </li>
                         </ul>
                     </div>
