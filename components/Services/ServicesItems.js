@@ -14,7 +14,7 @@ const SevicesItems = () => {
             })
     }, [])
     return (
-        <section className='max-w-7xl mx-auto grid grid-cols-3 gap-5 my-10'>
+        <section className='max-w-7xl mx-1 xl:mx-auto sm:grid grid-cols-2 lg:grid-cols-3 gap-5 my-7 sm:my-10'>
             {items.map(item => <ServicesItem key={item._id} item={item}></ServicesItem>)}
         </section>
     );
