@@ -1,0 +1,38 @@
+[
+    {
+        "_id":"01",
+        "img": "https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/key.png",
+        "name":"One-Day Car Rental",
+        "descripttion": "Amet est imperdiet commodo ante placerat. Urna aenean ullamcorper sagittis."
+    },
+    {
+        "_id":"02",
+        "img": "https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/car.png",
+        "name":"Long Term Car Rental",
+        "descripttion": "Amet est imperdiet commodo ante placerat. Urna aenean ullamcorper sagittis."
+    },
+    {
+        "_id":"03",
+        "img": "https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/car-1.png",
+        "name":"Cargo Vans & Trucks",
+        "descripttion": "Amet est imperdiet commodo ante placerat. Urna aenean ullamcorper sagittis."
+    },
+    {
+        "_id":"04",
+        "img": "https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/car-key.png",
+        "name":"Cargo Vans & Trucks",
+        "descripttion": "Amet est imperdiet commodo ante placerat. Urna aenean ullamcorper sagittis."
+    },
+    {
+        "_id":"05",
+        "img": "https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/rent.png",
+        "name":"Weekend Car Rental",
+        "descripttion": "Amet est imperdiet commodo ante placerat. Urna aenean ullamcorper sagittis."
+    },
+    {
+        "_id":"06",
+        "img": "https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/rent-1.png",
+        "name":"Student Car Rental",
+        "descripttion": "Amet est imperdiet commodo ante placerat. Urna aenean ullamcorper sagittis."
+    }
+]
