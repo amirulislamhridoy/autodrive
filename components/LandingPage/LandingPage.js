@@ -6,6 +6,7 @@ import Partners from "./Partners";
 import Ranking from "./Ranking";
 import Footer from "../Footer";
 import CarRentalService from "./CarRentalService";
+import HomeCarData from "./HomeCarData";
 
 const LandingPage = () => {
     return (
@@ -14,9 +15,10 @@ const LandingPage = () => {
                 <title>AUTODRIVE</title>
             </Head>
             <Banner></Banner>
+            <HomeCarData></HomeCarData>
+            <CarRentalService></CarRentalService>
             <OurLocations></OurLocations>
             <HomeBooking></HomeBooking>
-            <CarRentalService></CarRentalService>
             <Partners></Partners>
             <Ranking></Ranking>
             <Footer></Footer>

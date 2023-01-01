@@ -298,7 +298,7 @@
         "airCondition":"true",
         "fuel":"Petrol-Electric",
         "gear":"7 (auto)",
-        "dayHire":"",
+        "dayHire":"310",
         "engine":{
             "title":"Engine Specification",
             "engineType":"Petrol",
