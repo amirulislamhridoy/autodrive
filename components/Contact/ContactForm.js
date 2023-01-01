@@ -13,7 +13,7 @@ const ContactForm = () => {
                 Odio eu viverra tincidunt tristique ullamcorper blandit dipiscing nunc risus integer at elementum cursus. Lorem justo a felis elit amet.
             </article>
             <div className='sm:flex gap-x-12 my-4'>
-                <form className='p-7 bg-[#0a1931] mt-5 sm:w-7/12 xl:w-6/12' onSubmit={handleSubmit(onSubmit)}>
+                <form className='p-4 sm:p-7 bg-[#0a1931] mt-5 sm:w-7/12 xl:w-6/12' onSubmit={handleSubmit(onSubmit)}>
                     <input className='focus:outline-0 p-5 w-full mb-1' {...register("name", { required: true })} aria-invalid={errors.name ? "true" : "false"} placeholder='Your Name' />
                     {errors.name?.type === 'required' && <p style={{ color: '#da635d' }}>You should must write name.</p>}
                     <input className='focus:outline-0 p-5 w-full my-1' {...register("email", { required: true, pattern: /^\S+@\S+\.\S+$/ })} placeholder='example@gmail.com' />
