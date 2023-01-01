@@ -1,0 +1,640 @@
+[
+    {
+        "_id":"01",
+        "name":"Timor Hatchback (2018)",
+        "img":"https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/Car-6.jpg",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "seat":"4",
+        "airCondition":"true",
+        "fuel":"Petrol-Electric",
+        "gear":"7 (auto)",
+        "dayHire":"250",
+        "engine":{
+            "title":"Engine Specification",
+            "engineType":"Petrol",
+            "displacement": "1496 cc",
+            "horsePower":"109 HP @ 6000 RMP",
+            "torque": "141 Nm @4200 RPM"
+        },
+        "dimension":{
+            "title":"Dimension",
+            "overallLength":"4360 mm",
+            "overallWidth":"1695 mm",
+            "overallHeight":"1460mm",
+            "seatingCapacity":"5 persons",
+            "doors":"4 doors"
+        },
+        "steering":{
+            "title":"Steering",
+            "powerAssisted":"Electronic Power Steering",
+            "Minium Turning Radius": "49m"
+        },
+        "suspension":{
+            "title":"Suspension and Brake",
+            "frontSuspension":"Mc Pherson Strut type Coil spring",
+            "earSuspension":"Torison Beam",
+            "fontBreak":"Disc",
+            "rearBrake":"Drum"
+        },
+        "wheel":{
+            "title":"Wheel and Tyres",
+            "wheelType":"Alloy wheels",
+            "wheelBase":"2600 mm",
+            "wheelSize":"15 in",
+            "tyreSize":"195/65/R15",
+            "spareTyre":"Yes"
+        },
+        "mileage":{
+            "title":"Fuel Tank Capacity",
+            "mileage":"14 kmpl",
+            "mileageHybrid":"20kmpl"
+        },
+        "safety":{
+            "title":"Safety",
+            "seatbelts":"2",
+            "immobilizer":"Yes",
+            "childLock":"Yes",
+            "antiLockBrakingSystem":"Yes"
+        }
+    },
+    {
+        "_id":"02",
+        "name":"Rush Nova (2019)",
+        "img":"https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/Car-2.jpg",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "seat":"4",
+        "airCondition":"true",
+        "fuel":"Petrol-Electric",
+        "gear":"7 (auto)",
+        "dayHire":"300",
+        "engine":{
+            "title":"Engine Specification",
+            "engineType":"Petrol",
+            "displacement": "1496 cc",
+            "horsePower":"109 HP @ 6000 RMP",
+            "torque": "141 Nm @4200 RPM"
+        },
+        "dimension":{
+            "title":"Dimension",
+            "overallLength":"4360 mm",
+            "overallWidth":"1695 mm",
+            "overallHeight":"1460mm",
+            "seatingCapacity":"5 persons",
+            "doors":"4 doors"
+        },
+        "steering":{
+            "title":"Steering",
+            "powerAssisted":"Electronic Power Steering",
+            "Minium Turning Radius": "49m"
+        },
+        "suspension":{
+            "title":"Suspension and Brake",
+            "frontSuspension":"Mc Pherson Strut type Coil spring",
+            "earSuspension":"Torison Beam",
+            "fontBreak":"Disc",
+            "rearBrake":"Drum"
+        },
+        "wheel":{
+            "title":"Wheel and Tyres",
+            "wheelType":"Alloy wheels",
+            "wheelBase":"2600 mm",
+            "wheelSize":"15 in",
+            "tyreSize":"195/65/R15",
+            "spareTyre":"Yes"
+        },
+        "mileage":{
+            "title":"Fuel Tank Capacity",
+            "mileage":"14 kmpl",
+            "mileageHybrid":"20kmpl"
+        },
+        "safety":{
+            "title":"Safety",
+            "seatbelts":"2",
+            "immobilizer":"Yes",
+            "childLock":"Yes",
+            "antiLockBrakingSystem":"Yes"
+        }
+    } ,
+    {
+        "_id":"03",
+        "name":"Toyota Corolla (2018)",
+        "img":"https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/Car-1.jpg",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "seat":"4",
+        "airCondition":"true",
+        "fuel":"Petrol-Electric",
+        "gear":"7 (auto)",
+        "dayHire":"280",
+        "engine":{
+            "title":"Engine Specification",
+            "engineType":"Petrol",
+            "displacement": "1496 cc",
+            "horsePower":"109 HP @ 6000 RMP",
+            "torque": "141 Nm @4200 RPM"
+        },
+        "dimension":{
+            "title":"Dimension",
+            "overallLength":"4360 mm",
+            "overallWidth":"1695 mm",
+            "overallHeight":"1460mm",
+            "seatingCapacity":"5 persons",
+            "doors":"4 doors"
+        },
+        "steering":{
+            "title":"Steering",
+            "powerAssisted":"Electronic Power Steering",
+            "Minium Turning Radius": "49m"
+        },
+        "suspension":{
+            "title":"Suspension and Brake",
+            "frontSuspension":"Mc Pherson Strut type Coil spring",
+            "earSuspension":"Torison Beam",
+            "fontBreak":"Disc",
+            "rearBrake":"Drum"
+        },
+        "wheel":{
+            "title":"Wheel and Tyres",
+            "wheelType":"Alloy wheels",
+            "wheelBase":"2600 mm",
+            "wheelSize":"15 in",
+            "tyreSize":"195/65/R15",
+            "spareTyre":"Yes"
+        },
+        "mileage":{
+            "title":"Fuel Tank Capacity",
+            "mileage":"14 kmpl",
+            "mileageHybrid":"20kmpl"
+        },
+        "safety":{
+            "title":"Safety",
+            "seatbelts":"2",
+            "immobilizer":"Yes",
+            "childLock":"Yes",
+            "antiLockBrakingSystem":"Yes"
+        }
+    },
+    {
+        "_id":"04",
+        "name":"Chevrolet Camaro (2019)",
+        "img":"https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/Car-4.jpg",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "seat":"4",
+        "airCondition":"true",
+        "fuel":"Petrol-Electric",
+        "gear":"7 (auto)",
+        "dayHire":"200",
+        "engine":{
+            "title":"Engine Specification",
+            "engineType":"Petrol",
+            "displacement": "1496 cc",
+            "horsePower":"109 HP @ 6000 RMP",
+            "torque": "141 Nm @4200 RPM"
+        },
+        "dimension":{
+            "title":"Dimension",
+            "overallLength":"4360 mm",
+            "overallWidth":"1695 mm",
+            "overallHeight":"1460mm",
+            "seatingCapacity":"5 persons",
+            "doors":"4 doors"
+        },
+        "steering":{
+            "title":"Steering",
+            "powerAssisted":"Electronic Power Steering",
+            "Minium Turning Radius": "49m"
+        },
+        "suspension":{
+            "title":"Suspension and Brake",
+            "frontSuspension":"Mc Pherson Strut type Coil spring",
+            "earSuspension":"Torison Beam",
+            "fontBreak":"Disc",
+            "rearBrake":"Drum"
+        },
+        "wheel":{
+            "title":"Wheel and Tyres",
+            "wheelType":"Alloy wheels",
+            "wheelBase":"2600 mm",
+            "wheelSize":"15 in",
+            "tyreSize":"195/65/R15",
+            "spareTyre":"Yes"
+        },
+        "mileage":{
+            "title":"Fuel Tank Capacity",
+            "mileage":"14 kmpl",
+            "mileageHybrid":"20kmpl"
+        },
+        "safety":{
+            "title":"Safety",
+            "seatbelts":"2",
+            "immobilizer":"Yes",
+            "childLock":"Yes",
+            "antiLockBrakingSystem":"Yes"
+        }
+    },
+    {
+        "_id":"05",
+        "name":"Timor Hatchback (2017)",
+        "img":"https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/Car-5.jpg",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "seat":"4",
+        "airCondition":"true",
+        "fuel":"Petrol-Electric",
+        "gear":"7 (auto)",
+        "dayHire":"350",
+        "engine":{
+            "title":"Engine Specification",
+            "engineType":"Petrol",
+            "displacement": "1496 cc",
+            "horsePower":"109 HP @ 6000 RMP",
+            "torque": "141 Nm @4200 RPM"
+        },
+        "dimension":{
+            "title":"Dimension",
+            "overallLength":"4360 mm",
+            "overallWidth":"1695 mm",
+            "overallHeight":"1460mm",
+            "seatingCapacity":"5 persons",
+            "doors":"4 doors"
+        },
+        "steering":{
+            "title":"Steering",
+            "powerAssisted":"Electronic Power Steering",
+            "Minium Turning Radius": "49m"
+        },
+        "suspension":{
+            "title":"Suspension and Brake",
+            "frontSuspension":"Mc Pherson Strut type Coil spring",
+            "earSuspension":"Torison Beam",
+            "fontBreak":"Disc",
+            "rearBrake":"Drum"
+        },
+        "wheel":{
+            "title":"Wheel and Tyres",
+            "wheelType":"Alloy wheels",
+            "wheelBase":"2600 mm",
+            "wheelSize":"15 in",
+            "tyreSize":"195/65/R15",
+            "spareTyre":"Yes"
+        },
+        "mileage":{
+            "title":"Fuel Tank Capacity",
+            "mileage":"14 kmpl",
+            "mileageHybrid":"20kmpl"
+        },
+        "safety":{
+            "title":"Safety",
+            "seatbelts":"2",
+            "immobilizer":"Yes",
+            "childLock":"Yes",
+            "antiLockBrakingSystem":"Yes"
+        }
+    },
+    {
+        "_id":"06",
+        "name":"Toyota Corolla (2017)",
+        "img":"https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/Car-3.jpg",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "seat":"4",
+        "airCondition":"true",
+        "fuel":"Petrol-Electric",
+        "gear":"7 (auto)",
+        "dayHire":"",
+        "engine":{
+            "title":"Engine Specification",
+            "engineType":"Petrol",
+            "displacement": "1496 cc",
+            "horsePower":"109 HP @ 6000 RMP",
+            "torque": "141 Nm @4200 RPM"
+        },
+        "dimension":{
+            "title":"Dimension",
+            "overallLength":"4360 mm",
+            "overallWidth":"1695 mm",
+            "overallHeight":"1460mm",
+            "seatingCapacity":"5 persons",
+            "doors":"4 doors"
+        },
+        "steering":{
+            "title":"Steering",
+            "powerAssisted":"Electronic Power Steering",
+            "Minium Turning Radius": "49m"
+        },
+        "suspension":{
+            "title":"Suspension and Brake",
+            "frontSuspension":"Mc Pherson Strut type Coil spring",
+            "earSuspension":"Torison Beam",
+            "fontBreak":"Disc",
+            "rearBrake":"Drum"
+        },
+        "wheel":{
+            "title":"Wheel and Tyres",
+            "wheelType":"Alloy wheels",
+            "wheelBase":"2600 mm",
+            "wheelSize":"15 in",
+            "tyreSize":"195/65/R15",
+            "spareTyre":"Yes"
+        },
+        "mileage":{
+            "title":"Fuel Tank Capacity",
+            "mileage":"14 kmpl",
+            "mileageHybrid":"20kmpl"
+        },
+        "safety":{
+            "title":"Safety",
+            "seatbelts":"2",
+            "immobilizer":"Yes",
+            "childLock":"Yes",
+            "antiLockBrakingSystem":"Yes"
+        }
+    },
+    {
+        "_id":"07",
+        "name":"Toyota Rav4 Hybrid",
+        "img":"https://www.autosbangla.com/images/toyota/toyota-rav4-img1.jpg",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "seat":"4",
+        "airCondition":"true",
+        "fuel":"Petrol-Electric",
+        "gear":"7 (auto)",
+        "dayHire":"310",
+        "engine":{
+            "title":"Engine Specification",
+            "engineType":"Petrol",
+            "displacement": "1496 cc",
+            "horsePower":"109 HP @ 6000 RMP",
+            "torque": "141 Nm @4200 RPM"
+        },
+        "dimension":{
+            "title":"Dimension",
+            "overallLength":"4360 mm",
+            "overallWidth":"1695 mm",
+            "overallHeight":"1460mm",
+            "seatingCapacity":"5 persons",
+            "doors":"4 doors"
+        },
+        "steering":{
+            "title":"Steering",
+            "powerAssisted":"Electronic Power Steering",
+            "Minium Turning Radius": "49m"
+        },
+        "suspension":{
+            "title":"Suspension and Brake",
+            "frontSuspension":"Mc Pherson Strut type Coil spring",
+            "earSuspension":"Torison Beam",
+            "fontBreak":"Disc",
+            "rearBrake":"Drum"
+        },
+        "wheel":{
+            "title":"Wheel and Tyres",
+            "wheelType":"Alloy wheels",
+            "wheelBase":"2600 mm",
+            "wheelSize":"15 in",
+            "tyreSize":"195/65/R15",
+            "spareTyre":"Yes"
+        },
+        "mileage":{
+            "title":"Fuel Tank Capacity",
+            "mileage":"14 kmpl",
+            "mileageHybrid":"20kmpl"
+        },
+        "safety":{
+            "title":"Safety",
+            "seatbelts":"2",
+            "immobilizer":"Yes",
+            "childLock":"Yes",
+            "antiLockBrakingSystem":"Yes"
+        }
+    },
+    {
+        "_id":"08",
+        "name":"Toyota Allion",
+        "img":"https://4wheelerbd.com/wp-content/uploads/2020/10/allion-brown.jpg",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "seat":"4",
+        "airCondition":"true",
+        "fuel":"Petrol-Electric",
+        "gear":"7 (auto)",
+        "dayHire":"220",
+        "engine":{
+            "title":"Engine Specification",
+            "engineType":"Petrol",
+            "displacement": "1496 cc",
+            "horsePower":"109 HP @ 6000 RMP",
+            "torque": "141 Nm @4200 RPM"
+        },
+        "dimension":{
+            "title":"Dimension",
+            "overallLength":"4360 mm",
+            "overallWidth":"1695 mm",
+            "overallHeight":"1460mm",
+            "seatingCapacity":"5 persons",
+            "doors":"4 doors"
+        },
+        "steering":{
+            "title":"Steering",
+            "powerAssisted":"Electronic Power Steering",
+            "Minium Turning Radius": "49m"
+        },
+        "suspension":{
+            "title":"Suspension and Brake",
+            "frontSuspension":"Mc Pherson Strut type Coil spring",
+            "earSuspension":"Torison Beam",
+            "fontBreak":"Disc",
+            "rearBrake":"Drum"
+        },
+        "wheel":{
+            "title":"Wheel and Tyres",
+            "wheelType":"Alloy wheels",
+            "wheelBase":"2600 mm",
+            "wheelSize":"15 in",
+            "tyreSize":"195/65/R15",
+            "spareTyre":"Yes"
+        },
+        "mileage":{
+            "title":"Fuel Tank Capacity",
+            "mileage":"14 kmpl",
+            "mileageHybrid":"20kmpl"
+        },
+        "safety":{
+            "title":"Safety",
+            "seatbelts":"2",
+            "immobilizer":"Yes",
+            "childLock":"Yes",
+            "antiLockBrakingSystem":"Yes"
+        }
+    },
+    {
+        "_id":"10",
+        "name":"Honda Grace",
+        "img":"https://4wheelerbd.com/wp-content/uploads/2021/02/Honda-Grace-Hybrid.png",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "seat":"4",
+        "airCondition":"true",
+        "fuel":"Petrol-Electric",
+        "gear":"7 (auto)",
+        "dayHire":"280",
+        "engine":{
+            "title":"Engine Specification",
+            "engineType":"Petrol",
+            "displacement": "1496 cc",
+            "horsePower":"109 HP @ 6000 RMP",
+            "torque": "141 Nm @4200 RPM"
+        },
+        "dimension":{
+            "title":"Dimension",
+            "overallLength":"4360 mm",
+            "overallWidth":"1695 mm",
+            "overallHeight":"1460mm",
+            "seatingCapacity":"5 persons",
+            "doors":"4 doors"
+        },
+        "steering":{
+            "title":"Steering",
+            "powerAssisted":"Electronic Power Steering",
+            "Minium Turning Radius": "49m"
+        },
+        "suspension":{
+            "title":"Suspension and Brake",
+            "frontSuspension":"Mc Pherson Strut type Coil spring",
+            "earSuspension":"Torison Beam",
+            "fontBreak":"Disc",
+            "rearBrake":"Drum"
+        },
+        "wheel":{
+            "title":"Wheel and Tyres",
+            "wheelType":"Alloy wheels",
+            "wheelBase":"2600 mm",
+            "wheelSize":"15 in",
+            "tyreSize":"195/65/R15",
+            "spareTyre":"Yes"
+        },
+        "mileage":{
+            "title":"Fuel Tank Capacity",
+            "mileage":"14 kmpl",
+            "mileageHybrid":"20kmpl"
+        },
+        "safety":{
+            "title":"Safety",
+            "seatbelts":"2",
+            "immobilizer":"Yes",
+            "childLock":"Yes",
+            "antiLockBrakingSystem":"Yes"
+        }
+    },
+    {
+        "_id":"11",
+        "name":"Nissan X-trail",
+        "img":"https://4wheelerbd.com/wp-content/uploads/2020/09/Nissan-XTrail-ST-NTrek-1.jpg",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "seat":"4",
+        "airCondition":"true",
+        "fuel":"Petrol-Electric",
+        "gear":"7 (auto)",
+        "dayHire":"190",
+        "engine":{
+            "title":"Engine Specification",
+            "engineType":"Petrol",
+            "displacement": "1496 cc",
+            "horsePower":"109 HP @ 6000 RMP",
+            "torque": "141 Nm @4200 RPM"
+        },
+        "dimension":{
+            "title":"Dimension",
+            "overallLength":"4360 mm",
+            "overallWidth":"1695 mm",
+            "overallHeight":"1460mm",
+            "seatingCapacity":"5 persons",
+            "doors":"4 doors"
+        },
+        "steering":{
+            "title":"Steering",
+            "powerAssisted":"Electronic Power Steering",
+            "Minium Turning Radius": "49m"
+        },
+        "suspension":{
+            "title":"Suspension and Brake",
+            "frontSuspension":"Mc Pherson Strut type Coil spring",
+            "earSuspension":"Torison Beam",
+            "fontBreak":"Disc",
+            "rearBrake":"Drum"
+        },
+        "wheel":{
+            "title":"Wheel and Tyres",
+            "wheelType":"Alloy wheels",
+            "wheelBase":"2600 mm",
+            "wheelSize":"15 in",
+            "tyreSize":"195/65/R15",
+            "spareTyre":"Yes"
+        },
+        "mileage":{
+            "title":"Fuel Tank Capacity",
+            "mileage":"14 kmpl",
+            "mileageHybrid":"20kmpl"
+        },
+        "safety":{
+            "title":"Safety",
+            "seatbelts":"2",
+            "immobilizer":"Yes",
+            "childLock":"Yes",
+            "antiLockBrakingSystem":"Yes"
+        }
+    },
+    {
+        "_id":"12",
+        "name":"Mitsubishi Pajero",
+        "img":"https://4wheelerbd.com/wp-content/uploads/2020/09/Mitsubishi-Pajero-Price-in-Bangladesh-1.png",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "seat":"4",
+        "airCondition":"true",
+        "fuel":"Petrol-Electric",
+        "gear":"7 (auto)",
+        "dayHire":"280",
+        "engine":{
+            "title":"Engine Specification",
+            "engineType":"Petrol",
+            "displacement": "1496 cc",
+            "horsePower":"109 HP @ 6000 RMP",
+            "torque": "141 Nm @4200 RPM"
+        },
+        "dimension":{
+            "title":"Dimension",
+            "overallLength":"4360 mm",
+            "overallWidth":"1695 mm",
+            "overallHeight":"1460mm",
+            "seatingCapacity":"5 persons",
+            "doors":"4 doors"
+        },
+        "steering":{
+            "title":"Steering",
+            "powerAssisted":"Electronic Power Steering",
+            "Minium Turning Radius": "49m"
+        },
+        "suspension":{
+            "title":"Suspension and Brake",
+            "frontSuspension":"Mc Pherson Strut type Coil spring",
+            "earSuspension":"Torison Beam",
+            "fontBreak":"Disc",
+            "rearBrake":"Drum"
+        },
+        "wheel":{
+            "title":"Wheel and Tyres",
+            "wheelType":"Alloy wheels",
+            "wheelBase":"2600 mm",
+            "wheelSize":"15 in",
+            "tyreSize":"195/65/R15",
+            "spareTyre":"Yes"
+        },
+        "mileage":{
+            "title":"Fuel Tank Capacity",
+            "mileage":"14 kmpl",
+            "mileageHybrid":"20kmpl"
+        },
+        "safety":{
+            "title":"Safety",
+            "seatbelts":"2",
+            "immobilizer":"Yes",
+            "childLock":"Yes",
+            "antiLockBrakingSystem":"Yes"
+        }
+    }
+]
