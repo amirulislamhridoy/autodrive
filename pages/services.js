@@ -13,7 +13,7 @@ const services = () => {
             <Head><title>SERVICES</title></Head>
             <SubBanner url={'https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/automotive-dealership-store.jpg'}>WHAT WE OFFER</SubBanner>
             <ServicesContent></ServicesContent>
-            {/* <Discount></Discount>  */} 
+            <Discount></Discount>  
             {/* (Discount) this component is nice or dirty I con't understand */}
             <ServiceContentBlog></ServiceContentBlog>
             <ServicesItems></ServicesItems>
