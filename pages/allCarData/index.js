@@ -1,11 +1,11 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import Head from "next/head";
-import Navbar from "../components/Navbar";
-import CarShortData from '../components/CarShortData';
+import Navbar from "../../components/Navbar";
+import CarShortData from '../../components/CarShortData';
 import Link from 'next/link';
-import Footer from '../components/Footer';
-import Loading from '../components/Loading';
+import Footer from '../../components/Footer';
+import Loading from '../../components/Loading';
 
 const AllCarData = () => {
     const { isLoading, error, data: cars } = useQuery('repoData', () =>
