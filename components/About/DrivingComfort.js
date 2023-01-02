@@ -9,7 +9,7 @@ const DrivingComfort = () => {
                 <p className='sm:mt-2 md:mt-6'>Quam diam nisi id viverra dui proin quisque. Ridiculus adipiscing feugiat justo, sagittis. Erat amet id netus faucibus.</p>
             </div>
             <div className='mt-1 sm:mt-6 md:mt-0 col-start-5 col-end-11'>
-                <iframe className='w-full' width="560" height="315" src="https://www.youtube.com/embed/H35hOow2dtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe className='w-full' width="560" height="315" src="https://www.youtube.com/embed/H35hOow2dtU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
         </section>
     );

@@ -15,7 +15,7 @@ const AboutContent = () => {
                     </article>
                 </div>
                 <div className='mt-10 md:mt-0'>
-                    <img class='w-full' decoding="async" src="https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/elementor/thumbs/about-sect2-pibdgmmbnjp4n2uyoz0wdsalpq9opx47mxc31vyzeg.jpg" title="about-sect2" alt="about-sect2" />
+                    <img className='w-full' decoding="async" src="https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/elementor/thumbs/about-sect2-pibdgmmbnjp4n2uyoz0wdsalpq9opx47mxc31vyzeg.jpg" title="about-sect2" alt="about-sect2" />
                     <article className='text-justify mt-4'>
                         Venenatis quam diam nisi id viverra dui proin quisque. Ridicul netus faucibus. Venenatis quam diam nisi id viverra dui proin quisque. Ridiculus adipiscing massa at amet, mi at auctor. Donec vestibulum quis morbi sit non feugiat justo, sagittis. Erat amet id netus faucibus.
                     </article>
@@ -28,28 +28,28 @@ const AboutContent = () => {
                     <h2 className='text-xl sm:text-4xl font-bold mt-2'>WHY BOOK WITH AUTODRIVE?</h2>
                     <div className='mt-8'>
                         <div className='flex gap-x-4 items-center mt-2'>
-                            <i class="sm:text-2xl text-white p-1 sm:p-3 bg-red-500 rounded-full fa-regular fa-money-bill-1"></i>
+                            <i className="sm:text-2xl text-white p-1 sm:p-3 bg-red-500 rounded-full fa-regular fa-money-bill-1"></i>
                             <div>
                                 <h3 className='font-bold sm:text-xl'>ALL INCLUSIVE PRICING</h3>
                                 <p className='mt-1'>Odio eu viverra tincidunt tristique</p>
                             </div>
                         </div>
                         <div className='flex gap-x-4 items-center mt-2'>
-                            <i class="sm:text-2xl text-white p-1 sm:p-3 bg-red-500 rounded-full fa-solid fa-headset"></i>
+                            <i className="sm:text-2xl text-white p-1 sm:p-3 bg-red-500 rounded-full fa-solid fa-headset"></i>
                             <div>
                                 <h3 className='font-bold sm:text-xl'>DEDICATED CUSTOMER SUPPORT</h3>
                                 <p className='mt-1'>Odio eu viverra tincdunt trstique</p>
                             </div>
                         </div>
                         <div className='flex gap-x-4 items-center mt-2'>
-                            <i class="sm:text-2xl text-white py-1 px-2 sm:py-3 sm:px-4 bg-red-500 rounded-full fa-solid fa-dollar-sign"></i>
+                            <i className="sm:text-2xl text-white py-1 px-2 sm:py-3 sm:px-4 bg-red-500 rounded-full fa-solid fa-dollar-sign"></i>
                             <div>
                                 <h3 className='font-bold sm:text-xl'>LOWSET PRICE GUARANTEE</h3>
                                 <p className='mt-1'>Odio eu viverra tincdunt trstique</p>
                             </div>
                         </div>
                         <div className='flex gap-x-4 items-center mt-2'>
-                            <i class="sm:text-2xl text-white p-1 sm:p-3 bg-red-500 rounded-full fa-solid fa-check-double"></i>
+                            <i className="sm:text-2xl text-white p-1 sm:p-3 bg-red-500 rounded-full fa-solid fa-check-double"></i>
                             <div>
                                 <h3 className='font-bold sm:text-xl'>FREE CANCELLATION</h3>
                                 <p className='mt-1'>Odio eu viverra tincdunt trstique</p>
