@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRouter } from 'next/router';
@@ -9,12 +9,9 @@ import CarShortData from '../../components/CarShortData';
 import Link from 'next/link';
 import Footer from '../../components/Footer';
 import Loading from '../../components/Loading';
-import { PreviousPath } from '../_app';
 
 const AllCarData = () => {
     const router = useRouter()
-    const {setPath} = useContext(PreviousPath);
-    // setPath('')
     const [user, loading] = useAuthState(auth);
     const { isLoading, error, data: cars } = useQuery('repoData', () =>
         // if I want to use dependence this time will be (useQuery(['repoData', dependence items],.....))
@@ -26,7 +23,6 @@ const AllCarData = () => {
         return <Loading />
     }
     if(!user){
-        setPath(router.asPath)
         router.push('/login')
     }
     return (

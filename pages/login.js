@@ -1,44 +1,34 @@
 import Navbar from "../components/Navbar";
 import Head from "next/head";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from "../firebase.init";
 import { useRouter } from "next/router";
 import Loading from "../components/Loading";
-import { PreviousPath } from "./_app";
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 const Login = () => {
     const router = useRouter()
-    const {path, setPath} = useContext(PreviousPath)
     const [toggle, setToggle] = useState(false)
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
-      const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    ] = useSignInWithEmailAndPassword(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
-      const formSubmit = e => {
+    const formSubmit = e => {
         e.preventDefault()
         const email = e.target.email.value
         const password = e.target.password.value
         signInWithEmailAndPassword(email, password)
-      }
-    if(user || gUser){
-        if(path){
-            router.push(path)
-            setTimeout(() => {
-                setPath('')
-              }, 1000);
-              return () => clearTimeout(timer);
-        }else{
-            router.push('/')
-        }
     }
-    if(loading || gLoading){
+    if (user || gUser) {
+        router.push('/')
+    }
+    if (loading || gLoading) {
         return <Loading></Loading>
     }
     return (
@@ -79,7 +69,7 @@ const Login = () => {
                             <Link className='text-[#2c63ec] font-semibold' href=''>Forgot password?</Link>
                         </div>
                         {(error || gError) && <p style={{ color: 'red' }}>{(error?.code || gError?.code)}</p>}
-                        <button type='submit' disabled={!toggle} className={`w-full border rounded-lg py-2 ${toggle ? 'bg-[#2c63ec] text-white': " text-gray-400" }`}>Login in to your account</button>
+                        <button type='submit' disabled={!toggle} className={`w-full border rounded-lg py-2 ${toggle ? 'bg-[#2c63ec] text-white' : " text-gray-400"}`}>Login in to your account</button>
                     </form>
                 </div>
                 <div className='hidden lg:block'>
