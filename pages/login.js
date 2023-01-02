@@ -1,14 +1,17 @@
 import Navbar from "../components/Navbar";
 import Head from "next/head";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from "../firebase.init";
 import { useRouter } from "next/router";
 import Loading from "../components/Loading";
+import { PreviousPath } from "./_app";
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 const Login = () => {
     const router = useRouter()
+    const {path, setPath} = useContext(PreviousPath)
     const [toggle, setToggle] = useState(false)
     const [
         signInWithEmailAndPassword,
@@ -16,6 +19,7 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+      const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
       const formSubmit = e => {
         e.preventDefault()
@@ -23,10 +27,18 @@ const Login = () => {
         const password = e.target.password.value
         signInWithEmailAndPassword(email, password)
       }
-    if(user){
-        router.push('/')
+    if(user || gUser){
+        if(path){
+            router.push(path)
+            setTimeout(() => {
+                setPath('')
+              }, 1000);
+              return () => clearTimeout(timer);
+        }else{
+            router.push('/')
+        }
     }
-    if(loading){
+    if(loading || gLoading){
         return <Loading></Loading>
     }
     return (
@@ -57,7 +69,7 @@ const Login = () => {
                             <span>or</span>
                             <hr className='w-full'></hr>
                         </div>
-                        <button className='w-full border rounded-lg flex px-3 py-2 hover:bg-gray-100'><img className='w-5' src='https://freesvg.org/img/1534129544.png' alt=''></img><span className='flex-1'>Sign in with Google</span></button>
+                        <button onClick={() => signInWithGoogle()} className='w-full border rounded-lg flex px-3 py-2 hover:bg-gray-100'><img className='w-5' src='https://freesvg.org/img/1534129544.png' alt=''></img><span className='flex-1'>Sign in with Google</span></button>
                         <button className='w-full border rounded-lg flex px-3 py-2 hover:bg-gray-100 mt-5'><img className='w-5' src='https://cdn-icons-png.flaticon.com/512/25/25231.png' alt=''></img><span className='flex-1'>Sign in with Github</span></button>
                         <div className="flex justify-between my-6">
                             <div className=''>
@@ -66,7 +78,7 @@ const Login = () => {
                             </div>
                             <Link className='text-[#2c63ec] font-semibold' href=''>Forgot password?</Link>
                         </div>
-                        {error && <p style={{ color: 'red' }}>{error.code}</p>}
+                        {(error || gError) && <p style={{ color: 'red' }}>{(error?.code || gError?.code)}</p>}
                         <button type='submit' disabled={!toggle} className={`w-full border rounded-lg py-2 ${toggle ? 'bg-[#2c63ec] text-white': " text-gray-400" }`}>Login in to your account</button>
                     </form>
                 </div>
