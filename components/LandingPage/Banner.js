@@ -1,11 +1,33 @@
 import { useEffect, useState } from "react";
 import Navbar from "../Navbar";
-const axios = require('axios');
+import axios from 'axios';
 import { toast } from 'react-toastify';
+import 'react-day-picker/dist/style.css';
+import { format } from 'date-fns';
+import { DayPicker } from 'react-day-picker';
+import { useRouter } from "next/router";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Banner = () => {
+    const router = useRouter()
     const [locations, setLocations] = useState([])
     const [cars, setCars] = useState([])
+    const [range, setRange] = useState(new Date())
+    const pastMonth = new Date()
+    const [user, loading, error] = useAuthState(auth);
+    let footer;
+    if (range?.from) {
+        if (!range.to) {
+          footer = <p>{format(range.from, 'PPP')}</p>;
+        } else if (range.to) {
+          footer = (
+            <p>
+              {format(range.from, 'PPP')}–{format(range.to, 'PPP')}
+            </p>
+          );
+        }
+      }
     useEffect(() => {
         axios.get('http://localhost:3000/api/carData')
             .then(function (response) {
@@ -27,16 +49,19 @@ const Banner = () => {
 
     const fromSubmit = (e) => {
         e.preventDefault()
+        if(!user){
+            router.push('/login')
+            return toast.error("First you should login in this website.")
+        }
         const location = e.target.location.value
         const car = e.target.car.value
-        const start = e.target.startDate.value
-        const end = e.target.endDate.value
-        console.log(start)
-        if((location === 'Pick Us Location') && (car === 'Car Name')){
+        const date = e.target.date.value
+        const number = e.target.number.value
+        if ((location === 'Pick Us Location') && (car === 'Car Name')) {
             return toast.error('Please select location & car name.')
-        }else if(location === 'Pick Us Location'){
+        } else if (location === 'Pick Us Location') {
             return toast.error('Please select car name.')
-        }else if(car === 'Car Name'){
+        } else if (car === 'Car Name') {
             return toast.error('Please select car name')
         }
     }
@@ -61,8 +86,19 @@ const Banner = () => {
                                 {cars?.map(car => <option key={car._id} vlaue={car.name}>{car.name}</option>)}
                             </select>
                             {/* type="text" onFocus={(e) => e.target.type = 'date'} */}
-                            <input name='startDate' type='date' className="flex-1 block w-full py-2 sm:py-4 px-4 outline-0 min-w-[170px]" required />
-                            <input name="endDate" type="text" onFocus={(e) => e.target.type = 'date'} className="flex-1 block w-full py-2 sm:py-4 px-4 outline-0 min-w-[170px]" placeholder="End Date " />
+                            <div className='flex-1 min-w-[170px] relative group'>
+                                <input name='date' type='text' value={`${range?.from ? format(range?.from, 'PPP'): 'Date'}${range?.to ? `-${format(range?.from, 'PPP')}`: ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0" placeholder="Date" required />
+                                <DayPicker
+                                className='Day-Picker group-hover:block hidden absolute bg-white sm:p-5 rounded-xl rounded-br-none right-0 lg:right-auto lg:left-0 lg:rounded-bl-none shadow-xl overflow-x-auto whitespace-nowrap top-[-232px] sm:top-[-320px]'
+                                style={{margin: '0'}}
+                                    mode="range"
+                                    defaultMonth={pastMonth}
+                                    selected={range}
+                                    // footer={footer}
+                                    onSelect={setRange}
+                                />
+                            </div>
+                            <input name="number" type="text" className="flex-1 block w-full py-2 sm:py-4 px-4 outline-0 min-w-[170px]" min={5} defaultValue="0150000000 " required />
 
                             <button className='flex-1 bg-[#ffc947] min-w-[170px] py-2 sm:py-4'>
                                 BOOK NOW

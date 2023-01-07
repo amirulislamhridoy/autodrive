@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 const OurLocations = () => {
     const [locations, setLocations] = useState([])
     useEffect(() => {
-        fetch('http://localhost:3000/api/location')
+        fetch('http://localhost:5000/location/getAll')
             .then(res => res.json())
             .then(data => setLocations(data))
     }, [])

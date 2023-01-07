@@ -27,13 +27,13 @@
         "steering":{
             "title":"Steering",
             "powerAssisted":"Electronic Power Steering",
-            "Minium Turning Radius": "49m"
+            "miniumTurningRadius": "49m"
         },
         "suspension":{
             "title":"Suspension and Brake",
             "frontSuspension":"Mc Pherson Strut type Coil spring",
             "earSuspension":"Torison Beam",
-            "fontBreak":"Disc",
+            "fontBrake":"Disc",
             "rearBrake":"Drum"
         },
         "wheel":{
@@ -85,13 +85,13 @@
         "steering":{
             "title":"Steering",
             "powerAssisted":"Electronic Power Steering",
-            "Minium Turning Radius": "49m"
+            "miniumTurningRadius": "49m"
         },
         "suspension":{
             "title":"Suspension and Brake",
             "frontSuspension":"Mc Pherson Strut type Coil spring",
             "earSuspension":"Torison Beam",
-            "fontBreak":"Disc",
+            "fontBrake":"Disc",
             "rearBrake":"Drum"
         },
         "wheel":{
@@ -143,13 +143,13 @@
         "steering":{
             "title":"Steering",
             "powerAssisted":"Electronic Power Steering",
-            "Minium Turning Radius": "49m"
+            "miniumTurningRadius": "49m"
         },
         "suspension":{
             "title":"Suspension and Brake",
             "frontSuspension":"Mc Pherson Strut type Coil spring",
             "earSuspension":"Torison Beam",
-            "fontBreak":"Disc",
+            "fontBrake":"Disc",
             "rearBrake":"Drum"
         },
         "wheel":{
@@ -201,13 +201,13 @@
         "steering":{
             "title":"Steering",
             "powerAssisted":"Electronic Power Steering",
-            "Minium Turning Radius": "49m"
+            "miniumTurningRadius": "49m"
         },
         "suspension":{
             "title":"Suspension and Brake",
             "frontSuspension":"Mc Pherson Strut type Coil spring",
             "earSuspension":"Torison Beam",
-            "fontBreak":"Disc",
+            "fontBrake":"Disc",
             "rearBrake":"Drum"
         },
         "wheel":{
@@ -259,13 +259,13 @@
         "steering":{
             "title":"Steering",
             "powerAssisted":"Electronic Power Steering",
-            "Minium Turning Radius": "49m"
+            "miniumTurningRadius": "49m"
         },
         "suspension":{
             "title":"Suspension and Brake",
             "frontSuspension":"Mc Pherson Strut type Coil spring",
             "earSuspension":"Torison Beam",
-            "fontBreak":"Disc",
+            "fontBrake":"Disc",
             "rearBrake":"Drum"
         },
         "wheel":{
@@ -317,13 +317,13 @@
         "steering":{
             "title":"Steering",
             "powerAssisted":"Electronic Power Steering",
-            "Minium Turning Radius": "49m"
+            "miniumTurningRadius": "49m"
         },
         "suspension":{
             "title":"Suspension and Brake",
             "frontSuspension":"Mc Pherson Strut type Coil spring",
             "earSuspension":"Torison Beam",
-            "fontBreak":"Disc",
+            "fontBrake":"Disc",
             "rearBrake":"Drum"
         },
         "wheel":{
@@ -375,13 +375,13 @@
         "steering":{
             "title":"Steering",
             "powerAssisted":"Electronic Power Steering",
-            "Minium Turning Radius": "49m"
+            "miniumTurningRadius": "49m"
         },
         "suspension":{
             "title":"Suspension and Brake",
             "frontSuspension":"Mc Pherson Strut type Coil spring",
             "earSuspension":"Torison Beam",
-            "fontBreak":"Disc",
+            "fontBrake":"Disc",
             "rearBrake":"Drum"
         },
         "wheel":{
@@ -433,13 +433,13 @@
         "steering":{
             "title":"Steering",
             "powerAssisted":"Electronic Power Steering",
-            "Minium Turning Radius": "49m"
+            "miniumTurningRadius": "49m"
         },
         "suspension":{
             "title":"Suspension and Brake",
             "frontSuspension":"Mc Pherson Strut type Coil spring",
             "earSuspension":"Torison Beam",
-            "fontBreak":"Disc",
+            "fontBrake":"Disc",
             "rearBrake":"Drum"
         },
         "wheel":{
@@ -491,13 +491,13 @@
         "steering":{
             "title":"Steering",
             "powerAssisted":"Electronic Power Steering",
-            "Minium Turning Radius": "49m"
+            "miniumTurningRadius": "49m"
         },
         "suspension":{
             "title":"Suspension and Brake",
             "frontSuspension":"Mc Pherson Strut type Coil spring",
             "earSuspension":"Torison Beam",
-            "fontBreak":"Disc",
+            "fontBrake":"Disc",
             "rearBrake":"Drum"
         },
         "wheel":{
@@ -549,13 +549,13 @@
         "steering":{
             "title":"Steering",
             "powerAssisted":"Electronic Power Steering",
-            "Minium Turning Radius": "49m"
+            "miniumTurningRadius": "49m"
         },
         "suspension":{
             "title":"Suspension and Brake",
             "frontSuspension":"Mc Pherson Strut type Coil spring",
             "earSuspension":"Torison Beam",
-            "fontBreak":"Disc",
+            "fontBrake":"Disc",
             "rearBrake":"Drum"
         },
         "wheel":{
@@ -607,13 +607,13 @@
         "steering":{
             "title":"Steering",
             "powerAssisted":"Electronic Power Steering",
-            "Minium Turning Radius": "49m"
+            "miniumTurningRadius": "49m"
         },
         "suspension":{
             "title":"Suspension and Brake",
             "frontSuspension":"Mc Pherson Strut type Coil spring",
             "earSuspension":"Torison Beam",
-            "fontBreak":"Disc",
+            "fontBrake":"Disc",
             "rearBrake":"Drum"
         },
         "wheel":{
@@ -665,13 +665,13 @@
         "steering":{
             "title":"Steering",
             "powerAssisted":"Electronic Power Steering",
-            "Minium Turning Radius": "49m"
+            "miniumTurningRadius": "49m"
         },
         "suspension":{
             "title":"Suspension and Brake",
             "frontSuspension":"Mc Pherson Strut type Coil spring",
             "earSuspension":"Torison Beam",
-            "fontBreak":"Disc",
+            "fontBrake":"Disc",
             "rearBrake":"Drum"
         },
         "wheel":{

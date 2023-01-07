@@ -3,24 +3,52 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
+
+* {
   font-family: 'Poppins', sans-serif;
 }
 
-.mySwiper .swiper-button-prev::after, .mySwiper .swiper-button-next::after{
+.mySwiper .swiper-button-prev::after,
+.mySwiper .swiper-button-next::after {
   font-size: 15px;
   font-weight: 900;
   color: #ffc947;
   border: 2.5px solid #ffc947;
   padding: 4px 5px;
-  border-radius: 50%;;
+  border-radius: 50%;
+  ;
 }
-.mySwiper .swiper-button-prev::after{
+
+.mySwiper .swiper-button-prev::after {
   margin-left: -22px;
 }
-.mySwiper .swiper-button-next::after{
+
+.mySwiper .swiper-button-next::after {
   margin-left: 22px;
 }
+
+@media screen and (max-width: 639px) {
+  /* .Day-Picker{
+    top: -250px !important;
+  } */
+  .Day-Picker .rdp-month.rdp-caption_start.rdp-caption_end {
+    padding: 3px;
+  }
+  .Day-Picker .rdp-table {
+    margin: 0 auto;
+  }
+  .Day-Picker .rdp-cell {
+    width: 10px !important;
+    height: 30px !important;
+  }
+  .Day-Picker .rdp-button_reset {
+    display: inline-block;
+    font-size: 16px;
+    width: 25px;
+    height: 30px;
+  }
+}
+
 /* :root {
   --max-width: 1100px;
   --border-radius: 12px;

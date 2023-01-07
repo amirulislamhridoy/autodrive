@@ -34,10 +34,11 @@ const Footer = () => {
                     </ul>
                     <ul>
                         <h4 className='text-xl font-bold mb-1 sm:mb-7 mt-4 sm:mt-0'>QUICK MENU</h4>
-                        <li className='text-[#545e70] hover:text-black my-1'><Link href=''>About</Link></li>
-                        <li className='text-[#545e70] hover:text-black my-1'><Link href=''>Services</Link></li>
-                        <li className='text-[#545e70] hover:text-black my-1'><Link href=''>Location</Link></li>
-                        <li className='text-[#545e70] hover:text-black my-1'><Link href=''>Fleet</Link></li>
+                        <li className='text-[#545e70] hover:text-black my-1'><Link href='/about'>About</Link></li>
+                        <li className='text-[#545e70] hover:text-black my-1'><Link href='/services'>Services</Link></li>
+                        <li className='text-[#545e70] hover:text-black my-1'><Link href='/locations'>Location</Link></li>
+                        <li className='text-[#545e70] hover:text-black my-1'><Link href='/blogs'>Blogs</Link></li>
+                        <li className='text-[#545e70] hover:text-black my-1'><Link href='/contact'>Contact Us</Link></li>
                     </ul>
                     <ul>
                         <h4 className='text-xl font-bold mb-1 sm:mb-7 mt-4 sm:mt-0'>CUSTOMER SERVICES</h4>
