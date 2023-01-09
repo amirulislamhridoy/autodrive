@@ -7,6 +7,7 @@ import auth from "../firebase.init";
 import { useRouter } from "next/router";
 import Loading from "../components/Loading";
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import useToken from "../hook/useToken";
 
 const Login = () => {
     const router = useRouter()
@@ -18,14 +19,15 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [token, setToken] = useToken(user || gUser)
 
-    const formSubmit = e => {
+    const formSubmit = async e => {
         e.preventDefault()
         const email = e.target.email.value
         const password = e.target.password.value
-        signInWithEmailAndPassword(email, password)
+        await signInWithEmailAndPassword(email, password)
     }
-    if (user || gUser) {
+    if (token) {
         router.push('/')
     }
     if (loading || gLoading) {
