@@ -5,7 +5,7 @@ import ServicesItem from './ServicesItem';
 const SevicesItems = () => {
     const [items, setItems] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:3000/api/serviceItems')
+        axios.get('http://localhost:5000/getAll')
             .then(function (response) {
                 setItems(response.data);
             })

@@ -12,6 +12,7 @@ const OurLocations = () => {
         fetch('http://localhost:5000/location/getAll')
             .then(res => res.json())
             .then(data => setLocations(data))
+            .catch(e => console.log(e))
     }, [])
     return (
         <section className='max-w-7xl mx-auto bg-no-repeat bg-center bg-contain flex flex-col items-center my-20' style={{ backgroundImage: `url(${'https://worldmapwithcountries.net/wp-content/uploads/2020/07/Blank-Map-of-Bangladesh.gif'})` }}>
@@ -54,7 +55,7 @@ const OurLocations = () => {
                 className='mySwiper mt-8'
                 style={{ maxWidth: '100%' }}
             >
-                {locations.map((location, i) => <SwiperSlide className='border p-5 pl-6 mb-4 drop-shadow-xl bg-white rounded-lg' key={i}>
+                {locations?.map((location, i) => <SwiperSlide className='border p-5 pl-6 mb-4 drop-shadow-xl bg-white rounded-lg' key={i}>
                     <div className='flex items-center gap-x-2'>
                         <i className="fa-solid fa-location-dot text-[#ffc947] text-xl"></i>
                         <h3 className='text-2xl'>{location.name}</h3>
