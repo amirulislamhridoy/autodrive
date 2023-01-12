@@ -5,7 +5,7 @@
         "address": "123 Bank Uttara, Dhaka 1212",
         "call": "+8801500000",
         "email": "user@gmail.com",
-        "website": "https://www.google.com"
+        "url": "https://goo.gl/maps/xQNJzwtcG6VKfmaA6"
     },
     {
         "_id": "2",
@@ -13,7 +13,7 @@
         "address": "123 Bank Uttara, Dhaka 1212",
         "call": "+8801500000",
         "email": "user@gmail.com",
-        "website": "https://www.google.com"
+        "url": "https://goo.gl/maps/xQNJzwtcG6VKfmaA6"
     },
     {
         "_id": "3",
@@ -21,7 +21,7 @@
         "address": "123 Bank Uttara, Dhaka 1212",
         "call": "+8801500000",
         "email": "user@gmail.com",
-        "website": "https://www.google.com"
+        "url": "https://goo.gl/maps/xQNJzwtcG6VKfmaA6"
     },
     {
         "_id": "4",
@@ -29,7 +29,7 @@
         "address": "123 Bank Uttara, Dhaka 1212",
         "call": "+8801500000",
         "email": "user@gmail.com",
-        "website": "https://www.google.com"
+        "url": "https://goo.gl/maps/xQNJzwtcG6VKfmaA6"
     },
     {
         "_id": "5",
@@ -37,7 +37,7 @@
         "address": "123 Bank Uttara, Dhaka 1212",
         "call": "+8801500000",
         "email": "user@gmail.com",
-        "website": "https://www.google.com"
+        "url": "https://goo.gl/maps/xQNJzwtcG6VKfmaA6"
     },
     {
         "_id": "6",
@@ -45,6 +45,6 @@
         "address": "123 Bank Uttara, Dhaka 1212",
         "call": "+8801500000",
         "email": "user@gmail.com",
-        "website": "https://www.google.com"
+        "url": "https://goo.gl/maps/xQNJzwtcG6VKfmaA6"
     }
 ]

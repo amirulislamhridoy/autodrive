@@ -12,14 +12,15 @@ const AllLocation = () => {
                 <p className='mb-5 text-center mx-1 sm:mx-0'>Odio eu viverra tincidunt tristique ullamcorper blandit dipiscing nunc risus integer at elementum cursus. Lorem justo a felis elit amet.</p>
                 <img src='https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/elementor/thumbs/car-loc-pi9o4h5phh24x6795bkmwifpss8wxrs2tnxtj7pgs0.png' alt=''></img>
                 <div className='flex flex-wrap justify-center gap-x-4'>
-                    {locations.map(location => <div key={location._id} className='border p-5 pl-6 mb-4 drop-shadow-xl bg-white rounded-lg'>
+                    {locations?.map(location => <div key={location._id} className='border p-5 pl-6 mb-4 drop-shadow-xl bg-white rounded-lg'>
                         <div className='flex items-center gap-x-2'>
                             <i className="fa-solid fa-location-dot text-[#ffc947] text-xl"></i>
                             <h3 className='text-2xl'>{location.name}</h3>
                         </div>
                         <p className='text-base'>{location.address}</p>
                         <p className='text-base'>{location.call}</p>
-                        <Link className='text-sm border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] font-semibold' target="_blank" rel="noopener noreferrer" href='https://goo.gl/maps/xQNJzwtcG6VKfmaA6' as=''>View Location <i class="fa-solid fa-angles-right"></i></Link>
+                        <p className='text-base'><i class="fa-regular fa-envelope"></i> {location.email}</p>
+                        <Link className='text-sm border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] font-semibold' target="_blank" rel="noopener noreferrer" href={location.url} as=''>View Location <i class="fa-solid fa-angles-right"></i></Link>
                     </div>)}
                 </div>
             </div>
