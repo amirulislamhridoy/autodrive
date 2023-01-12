@@ -1,3 +1,4 @@
+import Link from "next/link";
 import useLocation from "../../hook/useLocation";
 import Ranking from "../LandingPage/Ranking";
 
@@ -18,6 +19,7 @@ const AllLocation = () => {
                         </div>
                         <p className='text-base'>{location.address}</p>
                         <p className='text-base'>{location.call}</p>
+                        <Link className='text-sm border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] font-semibold' target="_blank" rel="noopener noreferrer" href='https://goo.gl/maps/xQNJzwtcG6VKfmaA6' as=''>View Location <i class="fa-solid fa-angles-right"></i></Link>
                     </div>)}
                 </div>
             </div>
