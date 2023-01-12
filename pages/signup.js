@@ -5,35 +5,40 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from './../firebase.init';
-import { toast } from "react-toastify";
 import { useRouter } from 'next/router';
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Loading from "../components/Loading";
+import useToken from "../hook/useToken";
 
 const Signup = () => {
     const [toggle, setToggle] = useState(false)
+    const [userData, setUserData] = useState({})
     const router = useRouter()
     const [error, setError] = useState('')
+    const [gError, setGerror] = useState('')
     const [loading, setLoading] = useState(false)
     const provider = new GoogleAuthProvider();
+    const [token, setToken] = useToken(userData)
+    
+    if (token) {
+        router.push('/')
+    }
     const formHandle = (e) => {
         e.preventDefault()
         setLoading(true)
         const email = e.target.email.value
         const password = e.target.password.value
         createUserWithEmailAndPassword(auth, email, password)
-            .then(userCredential => {
-                if (userCredential?.user?.uid) {
-                    setLoading(false)
-                    toast.success('User is created')
-                    router.push('/')
-                    setError('')
-                }
+            .then(result => {
+                setLoading(false)
+                setUserData(result)
+                setError('')
+                setToggle(false)
             })
             .catch(error => {
                 setLoading(false)
                 setError(error.code)
-                toast.error(error.code)
+                setToggle(false)
             })
     }
     const googleLoginFn = () => {
@@ -44,17 +49,15 @@ const Signup = () => {
                 // const token = credential.accessToken;
                 // console.log('credential', credential)
                 // const user = result.user;
-                if(result?.user?.email){
-                    setLoading(false)
-                    setError('')
-                    toast.success('You are sign in by Google.')
-                    router.push('/')
-                }
+                setLoading(false)
+                setUserData(result)
+                setToggle(false)
+                setGerror('')
             })
             .catch((error) => {
                 setLoading(false)
-                setError(error.code)
-                toast.error(error.code)
+                setGerror(error.code)
+                setToggle(false)
             })
     }
     if(loading){
@@ -88,7 +91,7 @@ const Signup = () => {
                             <span>or</span>
                             <hr className='w-full'></hr>
                         </div>
-                        {error && <p style={{ color: 'red' }}>{error}</p>}
+                        {gError && <p style={{ color: 'red' }}>{gError}</p>}
                         <button onClick={googleLoginFn} className='w-full border rounded-lg flex px-3 py-2 hover:bg-gray-100'><img className='w-5' src='https://freesvg.org/img/1534129544.png' alt=''></img><span className='flex-1'>Sign in with Google</span></button>
                         <button className='w-full border rounded-lg flex px-3 py-2 hover:bg-gray-100 mt-5'><img className='w-5' src='https://cdn-icons-png.flaticon.com/512/25/25231.png' alt=''></img><span className='flex-1'>Sign in with Github</span></button>
                         <div className="flex justify-between my-6">

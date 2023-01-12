@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
+import { toast } from "react-toastify"
 import { changeByToken } from "../redux/token"
 
 const useToken = (user) => {
@@ -14,7 +15,9 @@ const useToken = (user) => {
                 dispatch(changeByToken(data.token))
                 setToken(true)
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                toast.error(error?.message)
+            })
     }
     return[token, setToken]
 }

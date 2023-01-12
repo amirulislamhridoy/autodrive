@@ -1,8 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+let token;
+if(typeof window !== 'undefined') {
+  token = localStorage.getItem('token')
+}
 const initialState = {
-//   value: module?.localStorage?.getItem('token') || "",
-//   value: ''
+  value: token || ""
 }
 
 export const tokenSlice = createSlice({

@@ -8,7 +8,6 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const token = useSelector(state => state.token.value)
-  console.log(token)
   return (
     <>
       <LandingPage></LandingPage>
