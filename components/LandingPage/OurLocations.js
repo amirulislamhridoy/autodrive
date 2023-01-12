@@ -1,19 +1,13 @@
-import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import useLocation from "../../hook/useLocation";
 
 const OurLocations = () => {
-    const [locations, setLocations] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/location/getAll')
-            .then(res => res.json())
-            .then(data => setLocations(data))
-            .catch(e => console.log(e))
-    }, [])
+    const [locations] = useLocation()
     return (
         <section className='max-w-7xl mx-auto bg-no-repeat bg-center bg-contain flex flex-col items-center my-20' style={{ backgroundImage: `url(${'https://worldmapwithcountries.net/wp-content/uploads/2020/07/Blank-Map-of-Bangladesh.gif'})` }}>
             <p className='text-lg font-semibold text-[#ffc947] mb-2'>LOCATIONS</p>
