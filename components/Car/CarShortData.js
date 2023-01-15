@@ -12,7 +12,6 @@ const CarShortData = (props) => {
                 <div className='mt-3 lg:mt-2 xl:mt-5'>
                     <p className=''>Seats: {car.seat}</p>
                     <p className=''>Gear: {car.gear}</p>
-                    <p className=''>Air Condition: {car.airCondition === 'true' ? 'Yes' : "No"}</p>
                 </div>
                 <div className='flex justify-between items-center mt-2 lg:mt-0'>
                     <Link href='/allCarData/[id]' as={`/allCarData/${car._id}`} className='border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] pb-1 inline-block mt-3 font-bold'>View Details <span className='font-bold'>&gt;</span></Link>

@@ -18,15 +18,12 @@
   border-radius: 50%;
   ;
 }
-
 .mySwiper .swiper-button-prev::after {
   margin-left: -22px;
 }
-
 .mySwiper .swiper-button-next::after {
   margin-left: 22px;
 }
-
 @media screen and (max-width: 639px) {
   /* .Day-Picker{
     top: -250px !important;
