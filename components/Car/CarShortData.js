@@ -10,12 +10,12 @@ const CarShortData = (props) => {
                 <h2 className='text-md sm:text-xl font-semibold '>Name: {car.name}</h2>
                 <p className='mt-1 '>{car?.description?.slice(0, 74)}...</p>
                 <div className='mt-3 lg:mt-2 xl:mt-5'>
-                    <p className=' '>Seats: {car.seat}</p>
-                    <p className=' '>Gear: {car.gear}</p>
-                    <p className=' '>Air Condition: {car.airCondition === 'true' ? 'Yes' : "No"}</p>
+                    <p className=''>Seats: {car.seat}</p>
+                    <p className=''>Gear: {car.gear}</p>
+                    <p className=''>Air Condition: {car.airCondition === 'true' ? 'Yes' : "No"}</p>
                 </div>
                 <div className='flex justify-between items-center mt-2 lg:mt-0'>
-                    <Link className='border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] pb-1 inline-block mt-3 font-bold' href='' as=''>View Details <span className='font-bold'>&gt;</span></Link>
+                    <Link href='/allCarData/[id]' as={`/allCarData/${car._id}`} className='border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] pb-1 inline-block mt-3 font-bold'>View Details <span className='font-bold'>&gt;</span></Link>
                     <button className='bg-[#ffc947] py-1.5  px-4 rounded'><span className='text-xl sm:text-2xl lg:text-xl xl:text-3xl'>${car.dayHire}</span><span className='font-bold'> / day</span></button>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 import { useQuery } from 'react-query'
-import CarShortData from '../CarShortData';
+import CarShortData from '../Car/CarShortData';
 import Loading from '../Loading'
 
 const HomeCarData = () => {

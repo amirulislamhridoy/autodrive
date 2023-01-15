@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { useQuery } from 'react-query';
 import Head from "next/head";
 import Navbar from "../../components/Navbar";
-import CarShortData from '../../components/CarShortData';
+import CarShortData from '../../components/Car/CarShortData';
 import Link from 'next/link';
 import Footer from '../../components/Footer';
 import Loading from '../../components/Loading';
@@ -15,7 +15,7 @@ const AllCarData = () => {
     const [user, loading] = useAuthState(auth);
     const { isLoading, error, data: cars } = useQuery('repoData', () =>
         // if I want to use dependence this time will be (useQuery(['repoData', dependence items],.....))
-        fetch('http://localhost:3000/api/carData').then(res =>
+        fetch('http://localhost:5000/car/getAll').then(res =>
             res.json()
         )
     )
@@ -38,7 +38,7 @@ const AllCarData = () => {
                     <div className='mx-3 lg:mx-1 lg:grid grid-cols-2 gap-4 mt-8'>
                         {cars?.map((car, i) => <CarShortData key={i} car={car}></CarShortData>)}
                     </div>
-                    <div className='mt-5 text-center'><Link className='text-2xl border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] pb-2' href='http://localhost:3000/' as=''>Back to home page &gt;</Link></div>
+                    <div className='mt-5 text-center'><Link href='http://localhost:3000/' as='' className='text-2xl border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] pb-2'>Back to home page &gt;</Link></div>
                 </div>
             </section>
             <Footer></Footer>

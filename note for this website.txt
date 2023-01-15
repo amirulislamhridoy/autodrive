@@ -9,6 +9,12 @@ Car Rental Website live linke from themeforest
 https://preview.themeforest.net/item/mobirentz-car-rental-auto-dealer-elementor-template-kit/full_screen_preview/42487007?_ga=2.15961013.2061387770.1671559051-766518456.1663759833&_gac=1.149121860.1668874394.CjwKCAiAmuKbBhA2EiwAxQnt73sdKe-XKHq3cpcmR5UccOmd7YpqitFVzJ5vWT3wKRUGoiB4gWl--xoCDfkQAvD_BwE
 https://preview.themeforest.net/item/autodrive-car-rental-dealer-elementor-template-kit/full_screen_preview/35721071?_ga=2.82420757.2061387770.1671559051-766518456.1663759833&_gac=1.183067220.1668874394.CjwKCAiAmuKbBhA2EiwAxQnt73sdKe-XKHq3cpcmR5UccOmd7YpqitFVzJ5vWT3wKRUGoiB4gWl--xoCDfkQAvD_BwE
 
+car details website:
+https://4wheelerbd.com/car/toyota/axio-price-bd/
+
+Text(reach) Editor:
+draft.js / slate js
+
 Youtube complete next js project link: 
 https://www.youtube.com/watch?v=HejT6QXmgtc&list=PLynWqC6VC9KOvExUuzhTFsWaxnpP_97BD
 
