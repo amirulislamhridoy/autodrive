@@ -43,10 +43,10 @@ const Navbar = ({ children }) => {
                                 <Link href="/contact" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route ==='/contact' && 'border-b-2'}`} aria-current="page">CONTACT</Link>
                             </li>
                             <li>
-                                <Link href="/blogs" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route ==='/blogs' && 'border-b-2'}`} aria-current="page">BLOGS</Link>
+                                <Link href="/locations" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route ==='/locations' && 'border-b-2'}`} aria-current="page">LOCATIONS</Link>
                             </li>
                             <li>
-                                <Link href="/locations" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route ==='/locations' && 'border-b-2'}`} aria-current="page">LOCATIONS</Link>
+                                <Link href="/blogs" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route ==='/blogs' && 'border-b-2'}`} aria-current="page">BLOGS</Link>
                             </li>
                         </ul>
                     </div>

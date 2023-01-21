@@ -16,6 +16,7 @@ const Banner = () => {
     const [range, setRange] = useState(new Date())
     const pastMonth = new Date()
     const [user, loading, error] = useAuthState(auth);
+    
     let footer;
     if (range?.from) {
         if (!range.to) {
@@ -87,11 +88,13 @@ const Banner = () => {
                             </select>
                             {/* type="text" onFocus={(e) => e.target.type = 'date'} */}
                             <div className='flex-1 min-w-[170px] relative group'>
-                                <input name='date' type='text' value={`${range?.from ? format(range?.from, 'PPP'): 'Date'}${range?.to ? `-${format(range?.from, 'PPP')}`: ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0" placeholder="Date" required />
+                                {/* <input name='date' type='text' value={`${range?.from ? format(range?.from, 'PPP'): 'Date'}${range?.to ? `-${format(range?.from, 'PPP')}`: ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0" placeholder="Date" required /> */}
+                                <input name='date' type='text' value={`${range?.from ? (range?.from?.getDate() + '/' + range?.from?.getMonth() + "/" + range?.from?.getFullYear()): 'Date'}${range?.to ? (" - " + range?.to?.getDate() + '/' + range?.to?.getMonth() + "/" + range?.to?.getFullYear()): ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0" placeholder="Date" required />
                                 <DayPicker
                                 className='Day-Picker group-hover:block hidden absolute bg-white sm:p-5 rounded-xl rounded-br-none right-0 lg:right-auto lg:left-0 lg:rounded-bl-none shadow-xl overflow-x-auto whitespace-nowrap top-[-232px] sm:top-[-320px]'
                                 style={{margin: '0'}}
                                     mode="range"
+                                    disabled= {{ before: new Date() }}
                                     defaultMonth={pastMonth}
                                     selected={range}
                                     // footer={footer}

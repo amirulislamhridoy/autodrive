@@ -4,18 +4,33 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Footer from '../../../components/Footer';
+import auth from "../../../firebase.init";
+import Loading from "../../../components/Loading";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useSelector } from "react-redux";
 
 const Index = () => {
     const [car, setCar] = useState({})
+    const [user, loading] = useAuthState(auth);
+    const email = user?.email
     const router = useRouter()
     const { id } = router.query
+    const token = useSelector(state => state?.token?.value)
     useEffect(() => {
-        if (id) {
+        if (id && email) {
             // fetch(`http://localhost:5000/car/getCar/${id}`).then(res => res.json())
             // .then(data => console.log(data))
-            axios.get(`http://localhost:5000/car/getCar/${id}`).then(res => setCar(res.data))
+            axios.get(`http://localhost:5000/car/getCar/${id}?email=${email}`, {
+                headers: {'authorization': `Bearer ${token}`}
+            }).then(res => setCar(res.data))
         }
-    }, [id])
+    }, [id, email])
+    if(loading){
+        return <Loading />
+    }
+    if(!user){
+        router.push('/login')
+    }
     return (
         <main>
             <Head><title>CAR DETAILS</title></Head>
