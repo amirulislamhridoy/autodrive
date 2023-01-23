@@ -69,9 +69,9 @@ const Index = () => {
             <Head><title>Booking</title></Head>
             <Navbar>Booking</Navbar>
             <section className='max-w-7xl mx-1 xl:mx-auto mb-10'>
-                <div className='flex justify-between items-center gap-x-3'>
-                    <h2 className=' my-52'><span className='text-2xl'>Hello {name || email},</span> <br /> <span>Are you want to booking {car?.name} ?</span></h2>
-                    <div className='bg-gray-300 px-1 py-[10%]'></div>
+                <div className='sm:flex justify-between items-center gap-x-3'>
+                    <h2 className='my-4 sm:my-44 xl:my-52'><span className='text-xl md:text-2xl'>Hello {name || email},</span> <br /> <span>Are you want to booking {car?.name} ?</span></h2>
+                    <div className='hidden sm:block bg-gray-300 px-1 py-[10%]'></div>
                     <div><img src={car.img} alt='car'></img></div>
                 </div>
                 <form onSubmit={fromSubmit} className='flex gap-x-2 gap-y-1 flex-wrap'>

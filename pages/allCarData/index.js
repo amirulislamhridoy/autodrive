@@ -33,7 +33,7 @@ const AllCarData = () => {
             <Navbar>All Car Data</Navbar>
             <section className='bg-[#f4f6fa]'>
                 <div className='max-w-7xl mx-auto pt-20 pb-5'>
-                    <h1 className='text-5xl text-center font-bold'>WE OFFER BEST CAR</h1>
+                    <h1 className='text-xl sm:text-3xl lg:text-4xl xl:text-5xl text-center font-bold'>WE OFFER BEST CAR</h1>
                     <p className='text-center mt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
                     <div className='mx-3 lg:mx-1 lg:grid grid-cols-2 gap-4 mt-8'>
                         {cars?.map((car, i) => <CarShortData key={i} car={car}></CarShortData>)}

@@ -10,7 +10,7 @@ const Footer = () => {
                         <p className='text-[#545e70]'>Venenatis quam diam nisi id viverra dui proin quisque. ridicul netus faucib venen atis quam diam nisi id viverra dui</p>
                     </div>
                     <div className="mt-5 sm:mt-0">
-                        <h4 className='text-xl font-bold mb-2 sm:mb-7'>FOLLOW US</h4>
+                        <h4 className='sm:text-xl font-bold mb-2 sm:mb-7'>FOLLOW US</h4>
                         <div>
                             <Link className='mr-2 ' href=''><i className="bg-[#ffc947] p-2 rounded-full fa-brands fa-facebook"></i></Link>
                             <Link className='mx-2 ' href=''><i className="bg-[#ffc947] p-2 rounded-full fa-brands fa-twitter"></i></Link>
@@ -22,18 +22,18 @@ const Footer = () => {
                 <hr className='my-7'></hr>
                 <div className='md:flex justify-between'>
                     <ul>
-                        <h4 className='text-xl font-bold mb-1 md:mb-7 mt-4'>CONTACT US</h4>
+                        <h4 className='sm:text-xl font-bold mb-1 md:mb-7 mt-4'>CONTACT US</h4>
                         <p className='text-[#545e70]'>021 Hollywood Bulevard, LA <br /> customer@example.com <br /> +8801500000</p>
                     </ul>
                     <ul>
-                        <h4 className='text-xl font-bold md:mb-7 mt-4'>SERVICES</h4>
+                        <h4 className='sm:text-xl font-bold md:mb-7 mt-4'>SERVICES</h4>
                         <li className='text-[#545e70] hover:text-black my-1'><Link href=''>Supercar Rental</Link></li>
                         <li className='text-[#545e70] hover:text-black my-1'><Link href=''>Luxuary Rental</Link></li>
                         <li className='text-[#545e70] hover:text-black my-1'><Link href=''>Chauffeur Services</Link></li>
                         <li className='text-[#545e70] hover:text-black my-1'><Link href=''>Book Online</Link></li>
                     </ul>
                     <ul>
-                        <h4 className='text-xl font-bold md:mb-7 mt-4'>QUICK MENU</h4>
+                        <h4 className='sm:text-xl font-bold md:mb-7 mt-4'>QUICK MENU</h4>
                         <li className='text-[#545e70] hover:text-black my-1'><Link href='/about'>About</Link></li>
                         <li className='text-[#545e70] hover:text-black my-1'><Link href='/services'>Services</Link></li>
                         <li className='text-[#545e70] hover:text-black my-1'><Link href='/locations'>Location</Link></li>
@@ -41,7 +41,7 @@ const Footer = () => {
                         <li className='text-[#545e70] hover:text-black my-1'><Link href='/contact'>Contact Us</Link></li>
                     </ul>
                     <ul>
-                        <h4 className='text-xl font-bold md:mb-7 mt-4'>CUSTOMER SERVICES</h4>
+                        <h4 className='sm:text-xl font-bold md:mb-7 mt-4'>CUSTOMER SERVICES</h4>
                         <li className='text-[#545e70] hover:text-black my-1'><Link href=''>FAQ</Link></li>
                         <li className='text-[#545e70] hover:text-black my-1'><Link href=''>Rental Plicies</Link></li>
                         <li className='text-[#545e70] hover:text-black my-1'><Link href=''>Testimonials</Link></li>
