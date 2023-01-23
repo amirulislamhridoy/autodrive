@@ -27,6 +27,7 @@ const Index = () => {
                     toast.error(err.response.data)
                     signOut(auth);
                     router.push('/login')
+                    localStorage.removeItem('token')
                 }
             })
         }
@@ -47,7 +48,7 @@ const Index = () => {
                     <div className='ml-4 md:ml-0 mr-4 my-2 lg:my-0'>
                         <h3 className='text-2xl font-semibold'>{car?.name}</h3>
                         <article className='mt-2 lg:mt-3 text-justify'>{car?.description}</article>
-                        <button className='bg-[#ffc947] py-1.5 px-4 rounded mt-3 lg:mt-5'><span className='text-xl sm:text-2xl lg:text-xl xl:text-3xl'>${car.dayHire}</span><span className='font-bold'> / day</span></button>
+                        <button onClick={() => router.push(`/booking/${car?._id}`)} className='bg-[#ffc947] py-1.5 px-4 rounded mt-3 lg:mt-5'><span className='text-xl sm:text-2xl lg:text-xl xl:text-3xl'>${car.dayHire}</span><span className='font-bold'> / day</span></button>
                     </div>
                 </div>
                 <div className="">

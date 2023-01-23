@@ -13,10 +13,10 @@ const Banner = () => {
     const router = useRouter()
     const [locations, setLocations] = useState([])
     const [cars, setCars] = useState([])
-    const [range, setRange] = useState(new Date())
+    const [range, setRange] = useState()
     const pastMonth = new Date()
     const [user, loading, error] = useAuthState(auth);
-    
+
     let footer;
     if (range?.from) {
         if (!range.to) {
@@ -94,7 +94,7 @@ const Banner = () => {
                                 className='Day-Picker group-hover:block hidden absolute bg-white sm:p-5 rounded-xl rounded-br-none right-0 lg:right-auto lg:left-0 lg:rounded-bl-none shadow-xl overflow-x-auto whitespace-nowrap top-[-232px] sm:top-[-320px]'
                                 style={{margin: '0'}}
                                     mode="range"
-                                    disabled= {{ before: new Date() }}
+                                    disabled= {[{ before: new Date()}, new Date()]}
                                     defaultMonth={pastMonth}
                                     selected={range}
                                     // footer={footer}

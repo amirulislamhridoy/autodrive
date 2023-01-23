@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const CarShortData = (props) => {
+    const router = useRouter()
     const car = props.car
     return (
         <div className='my-5 lg:my-0 sm:flex shadow-xl bg-white sm:pr-3 rounded-md text-center sm:text-start px-5'>
@@ -15,7 +17,7 @@ const CarShortData = (props) => {
                 </div>
                 <div className='flex justify-between items-center mt-2 lg:mt-0'>
                     <Link href='/allCarData/[id]' as={`/allCarData/${car._id}`} className='border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] pb-1 inline-block mt-3 font-bold'>View Details <span className='font-bold'>&gt;</span></Link>
-                    <button className='bg-[#ffc947] py-1.5  px-4 rounded'><span className='text-xl sm:text-2xl lg:text-xl xl:text-3xl'>${car.dayHire}</span><span className='font-bold'> / day</span></button>
+                    <button onClick={() => router.push(`/booking/${car._id}`)} className='bg-[#ffc947] py-1.5  px-4 rounded'><span className='text-xl sm:text-2xl lg:text-xl xl:text-3xl'>${car.dayHire}</span><span className='font-bold'> / day</span></button>
                 </div>
             </div>
         </div>
