@@ -48,6 +48,9 @@ const Navbar = ({ children }) => {
                             <li>
                                 <Link href="/blogs" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route ==='/blogs' && 'border-b-2'}`} aria-current="page">BLOGS</Link>
                             </li>
+                            {user && <li>
+                                <Link href="/dashboard" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route ==='/dashboard' && 'border-b-2'}`} aria-current="page">DASHBOARD</Link>
+                            </li>}
                         </ul>
                     </div>
                 </div>

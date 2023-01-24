@@ -2,16 +2,18 @@ import Navbar from "../components/Navbar";
 import Head from "next/head";
 import { useState } from "react";
 import Link from "next/link";
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from "../firebase.init";
 import { useRouter } from "next/router";
 import Loading from "../components/Loading";
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import useToken from "../hook/useToken";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const router = useRouter()
     const [toggle, setToggle] = useState(false)
+    const [email, setEmail] = useState('')
     const [
         signInWithEmailAndPassword,
         user,
@@ -20,12 +22,23 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [token, setToken] = useToken(user || gUser)
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth
+      );
 
     const formSubmit = async e => {
         e.preventDefault()
-        const email = e.target.email.value
         const password = e.target.password.value
         await signInWithEmailAndPassword(email, password)
+    }
+    const passwordResetEmail = async (e) => {
+        e.preventDefault()
+        const success = await sendPasswordResetEmail(
+            email
+        );
+        if(success){
+            toast.success('Send password reset eamil')
+        }
     }
     if (token) {
         router.push('/')
@@ -48,7 +61,7 @@ const Login = () => {
                             <div>
                                 <label className='' htmlFor="email">Email</label>
                                 <br />
-                                <input id='email' name='email' className='lg:mt-2 px-3 py-2 border border-2 rounded-lg w-full' type='email' placeholder='user@example.com' required></input>
+                                <input id='email' className='lg:mt-2 px-3 py-2 border border-2 rounded-lg w-full' onChange={(e) => setEmail(e.target.value)} type='email' placeholder='user@example.com' required></input>
                             </div>
                             <div className='mt-2 lg:mt-0'>
                                 <label className='' htmlFor="password">Password</label>
@@ -68,7 +81,7 @@ const Login = () => {
                                 <input id='check' onChange={(e) => setToggle(e.target.checked)} className='mr-2' type='checkbox'></input>
                                 <label htmlFor='check'>Remember me</label>
                             </div>
-                            <Link className='text-[#2c63ec] font-semibold' href=''>Forgot password?</Link>
+                            <Link onClick={passwordResetEmail} className='text-[#2c63ec] font-semibold' href=''>Forgot password?</Link>
                         </div>
                         {(error || gError) && <p style={{ color: 'red' }}>{(error?.code || gError?.code)}</p>}
                         <button type='submit' disabled={!toggle} className={`w-full border rounded-lg py-2 ${toggle ? 'bg-[#2c63ec] text-white' : " text-gray-400"}`}>Login in to your account</button>

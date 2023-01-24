@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import axios from "axios";
-import { useSelector } from "react-redux";
 import 'react-day-picker/dist/style.css';
 
 const Index = () => {
@@ -20,12 +19,11 @@ const Index = () => {
     const [user, loading, error] = useAuthState(auth);
     const email = user?.email
     const name = user?.name
-    const token = useSelector(state => state?.token?.value)
 
     useEffect(() => {
         if (id && email) {
             axios.get(`http://localhost:5000/car/getCar/${id}?email=${email}`, {
-                headers: { 'authorization': `Bearer ${token}` }
+                headers: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
             }).then(res => setCar(res.data)).catch(err => {
                 if ((err?.response?.status === 401) || (err?.response?.status === 404)) {
                     toast.error(err.response.data)
@@ -68,9 +66,9 @@ const Index = () => {
         <main>
             <Head><title>Booking</title></Head>
             <Navbar>Booking</Navbar>
-            <section className='max-w-7xl mx-1 xl:mx-auto mb-10'>
+            <section className='max-w-7xl mx-1 xl:mx-auto mb-10 md:mb-20'>
                 <div className='sm:flex justify-between items-center gap-x-3'>
-                    <h2 className='my-4 sm:my-44 xl:my-52'><span className='text-xl md:text-2xl'>Hello {name || email},</span> <br /> <span>Are you want to booking {car?.name} ?</span></h2>
+                    <h2 className='my-4 sm:my-44 xl:my-52'><span className='text-xl md:text-2xl'>Hello {name || email},</span> <br /> <span>Are you want to booking {car?.name}?</span></h2>
                     <div className='hidden sm:block bg-gray-300 px-1 py-[10%]'></div>
                     <div><img src={car.img} alt='car'></img></div>
                 </div>

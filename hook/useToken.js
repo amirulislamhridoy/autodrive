@@ -12,7 +12,6 @@ const useToken = (user) => {
             .then(res => res.json())
             .then(data => {
                 localStorage.setItem('token', data.token)
-                dispatch(changeByToken(data.token))
                 setToken(true)
             })
             .catch(error => {

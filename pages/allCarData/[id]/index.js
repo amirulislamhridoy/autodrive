@@ -7,7 +7,6 @@ import Footer from '../../../components/Footer';
 import auth from "../../../firebase.init";
 import Loading from "../../../components/Loading";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { signOut } from 'firebase/auth';
 
@@ -17,11 +16,10 @@ const Index = () => {
     const email = user?.email
     const router = useRouter()
     const { id } = router.query
-    const token = useSelector(state => state?.token?.value)
     useEffect(() => {
         if (id && email) {
             axios.get(`http://localhost:5000/car/getCar/${id}?email=${email}`, {
-                headers: { 'authorization': `Bearer ${token}` }
+                headers: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
             }).then(res => setCar(res.data)).catch(err => {
                 if ((err?.response?.status === 401) || (err?.response?.status === 404)) {
                     toast.error(err.response.data)
