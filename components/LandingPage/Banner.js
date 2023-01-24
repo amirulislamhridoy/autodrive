@@ -30,7 +30,7 @@ const Banner = () => {
         }
       }
     useEffect(() => {
-        axios.get('http://localhost:3000/api/carData')
+        axios.get('http://localhost:5000/car/getAll')
             .then(function (response) {
                 setCars(response.data);
             })
@@ -39,7 +39,7 @@ const Banner = () => {
             })
     }, [])
     useEffect(() => {
-        axios.get('http://localhost:3000/api/location')
+        axios.get('http://localhost:5000/location/getAll')
             .then(function (response) {
                 setLocations(response.data);
             })
@@ -64,7 +64,28 @@ const Banner = () => {
             return toast.error('Please select car name.')
         } else if (car === 'Car Name') {
             return toast.error('Please select car name')
+        } else if(date === 'Date'){
+            return toast.error('Please select date')
+        }else if(number === '0150000000'){
+            return toast.error('Please write your phone number')
         }
+        let fromDate = date.split(' - ')[0]
+        let toDate = date.split(' - ')[1]
+        if((fromDate === toDate) || !toDate){
+            toDate = ''
+        }
+        const data = {email: user?.email, location, carName: car, fromDate: fromDate, toDate, number}
+        
+        axios.post('http://localhost:5000/booking/add', data)
+          .then(function (response) {
+            console.log(response);
+            if((response.status === 200) && response.data){
+                toast.success(response.data)
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
     return (
         <section className='bg-cover bg-fixed bg-center bg-no-repeat bg-no-repeat min-h-screen' style={{ backgroundImage: ` linear-gradient(rgba(10, 25, 49, 0.5), rgba(10, 25, 49, 0.7)), url('https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/hero-home.jpg')` }}>
@@ -101,7 +122,7 @@ const Banner = () => {
                                     onSelect={setRange}
                                 />
                             </div>
-                            <input name="number" type="text" className="flex-1 block w-full py-2 sm:py-4 px-4 outline-0 min-w-[170px]" min={5} defaultValue="0150000000 " required />
+                            <input name="number" type="text" className="flex-1 block w-full py-2 sm:py-4 px-4 outline-0 min-w-[170px]" min={5} defaultValue="0150000000" required />
 
                             <button className='flex-1 bg-[#ffc947] min-w-[170px] py-2 sm:py-4'>
                                 BOOK NOW

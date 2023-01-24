@@ -35,7 +35,7 @@ const Index = () => {
         }
     }, [id, email])
     useEffect(() => {
-        axios.get('http://localhost:3000/api/location')
+        axios.get('http://localhost:5000/location/getAll')
             .then(function (response) {
                 setLocations(response.data);
             })
