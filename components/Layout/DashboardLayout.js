@@ -2,12 +2,14 @@ import Head from "next/head";
 import Navbar from "../Navbar";
 import Footer from '../../components/Footer'
 import Link from "next/link";
-import { useState } from "react";
 import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
+import {dashboardToggle} from "../../redux/dashboardToggle";
 
 const DashboardLayout = ({ children }) => {
-    const [toggle, setToggle] = useState(false)
-    console.log(toggle)
+    const toggle = useSelector(state => state.dashboardToggle.value)
+    const dispatch = useDispatch()
+    
     const router = useRouter()
     return (
         <main>
@@ -18,7 +20,7 @@ const DashboardLayout = ({ children }) => {
             <Navbar>Dashboard</Navbar>
             <section className='max-w-7xl mx-auto flex overflow-hidden'>
                 <aside className={`bg-[#ccc] lg:p-5 pl-2 pr-4 sm:px-4 lg:pl-10 pb-10 min-h-[50vh] relative duration-300 ${toggle ? 'w-[45px] sm:w-[50px] md:w-[60px] lg:w-[100px]': 'md:w-[300px] min-w-[150px]'}`}>
-                    <i onClick={() => setToggle(!toggle)} className={`fa-solid fa-angle-right bg-white border-[1px] border-[black] px-[4px] py-[2px] sm:px-2 p sm:py-1 text-[10px] sm:text-sm rounded-full absolute right-[-7px] sm:right-[-12px] top-[5px] md:top-[10px] lg:top-[15px] cursor-pointer duration-300 ${!toggle && 'rotate-180'}`}></i>
+                    <i onClick={() => dispatch(dashboardToggle())} className={`fa-solid fa-angle-right bg-white border-[1px] border-[black] px-[4px] py-[2px] sm:px-2 p sm:py-1 text-[10px] sm:text-sm rounded-full absolute right-[-7px] sm:right-[-12px] top-[5px] md:top-[10px] lg:top-[15px] cursor-pointer duration-300 ${!toggle && 'rotate-180'}`}></i>
                     <div>
                         <Link className={`text-sm md:text-xl mt-[10px] sm:mt-[20px] lg:mt-[30px] inline-block grid grid-cols-8 ${router.route === '/dashboard' && 'text-white'}`} href='/dashboard'> <i className="fa-solid fa-user self-center"></i> <span className={`col-start-3 col-end-9 md:col-start-2 md:col-end-9 duration-300 ml-2 ${toggle && 'hidden'}`}>Profile</span></Link>
                     </div>
