@@ -56,7 +56,7 @@ const Login = () => {
                 <div className='mg:w-6/12 xl:w-5/12 p-4 md:p-7 md:pt-10 border rounded-lg'>
                     <Image width='188' height='42' className='bg-[#bbbbbb] mb-4' src='https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/logo-autodrive.png' alt=''></Image>
                     <h2 className='text-2xl font-semibold mb-2.5'>Welcome in Login</h2>
-                    <p className='text-sm text-[#aaaaaa]'>Start your website in seconds. Don't have an account? <Link className='text-[#2c63ec] font-semibold' href='/signup' alt=''>Sign up</Link></p>
+                    <p className='text-sm text-[#aaaaaa]'>Start your website in seconds. Don&apos;t have an account? <Link className='text-[#2c63ec] font-semibold' href='/signup' alt=''>Sign up</Link></p>
                     <form onSubmit={formSubmit} className='mt-4 lg:mt-6'>
                         <div className='lg:flex justify-between'>
                             <div>

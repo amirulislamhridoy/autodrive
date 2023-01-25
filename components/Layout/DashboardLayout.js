@@ -35,7 +35,7 @@ const DashboardLayout = ({ children }) => {
                         <Link className='text-xl mt-[30px] inline-block grid grid-cols-8' href=''> <i class="fa-solid fa-comment self-center"></i> <span className='col-start-2 col-end-9'>Add Review</span></Link>
                     </div>
                     <div>
-                        <Link className='text-xl mt-[30px] inline-block grid grid-cols-8' href=''> <i class="fa-solid fa-handshake self-center"></i> <span className='col-start-2 col-end-9'>Car's Propos</span></Link>
+                        <Link className='text-xl mt-[30px] inline-block grid grid-cols-8' href=''> <i class="fa-solid fa-handshake self-center"></i> <span className='col-start-2 col-end-9'>Car&apos;s Propos</span></Link>
                     </div>
                     
                 </aside>
