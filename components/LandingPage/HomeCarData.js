@@ -7,7 +7,7 @@ import Loading from '../Loading'
 const HomeCarData = () => {
     const { isLoading, error, data: cars } = useQuery('carData', () =>
         // if I want to use dependence this time will be (useQuery(['repoData', dependence items],.....))
-        fetch('http://localhost:5000/car/getAll').then(res =>
+        fetch('https://autodrive-server.vercel.app/car/getAll').then(res =>
             res.json()
         )
     )
@@ -22,7 +22,7 @@ const HomeCarData = () => {
                 <div className='mx-3 lg:mx-1 lg:grid grid-cols-2 gap-4 mt-8'>
                     {cars?.slice(0, 6)?.map((car, i) => <CarShortData key={i} car={car}></CarShortData>)}
                 </div>
-                <div className='mt-5 text-center'><Link className='sm:text-xl md:text-2xl border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] pb-2' href='http://localhost:3000/allCarData' as=''>All Car Data View &gt;</Link></div>
+                <div className='mt-5 text-center'><Link className='sm:text-xl md:text-2xl border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] pb-2' href='/allCarData' as=''>All Car Data View &gt;</Link></div>
             </div>
         </section>
     );

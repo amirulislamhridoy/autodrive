@@ -18,7 +18,7 @@ const Index = () => {
     const { id } = router.query
     useEffect(() => {
         if (id && email) {
-            axios.get(`http://localhost:5000/car/getCar/${id}?email=${email}`, {
+            axios.get(`https://autodrive-server.vercel.app/car/getCar/${id}?email=${email}`, {
                 headers: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
             }).then(res => setCar(res.data)).catch(err => {
                 if ((err?.response?.status === 401) || (err?.response?.status === 404)) {

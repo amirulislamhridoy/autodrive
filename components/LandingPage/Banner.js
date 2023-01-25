@@ -18,7 +18,7 @@ const Banner = () => {
     const [user, loading, error] = useAuthState(auth);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/car/getAll')
+        axios.get('https://autodrive-server.vercel.app/car/getAll')
             .then(function (response) {
                 setCars(response.data);
             })
@@ -27,7 +27,7 @@ const Banner = () => {
             })
     }, [])
     useEffect(() => {
-        axios.get('http://localhost:5000/location/getAll')
+        axios.get('https://autodrive-server.vercel.app/location/getAll')
             .then(function (response) {
                 setLocations(response.data);
             })
@@ -64,7 +64,7 @@ const Banner = () => {
         }
         const data = {email: user?.email, location, carName: car, fromDate: fromDate, toDate, number}
         
-        axios.post('http://localhost:5000/booking/add', data)
+        axios.post('https://autodrive-server.vercel.app/booking/add', data)
           .then(function (response) {
             if((response.status === 200) && response.data){
                 toast.success(response.data)

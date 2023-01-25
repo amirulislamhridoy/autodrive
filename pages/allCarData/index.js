@@ -14,7 +14,7 @@ const AllCarData = () => {
     const [user, loading] = useAuthState(auth);
     const { isLoading, error, data: cars } = useQuery('repoData', () =>
         // if I want to use dependence this time will be (useQuery(['repoData', dependence items],.....))
-        fetch('http://localhost:5000/car/getAll').then(res =>
+        fetch('https://autodrive-server.vercel.app/car/getAll').then(res =>
             res.json()
         )
     )
@@ -37,7 +37,7 @@ const AllCarData = () => {
                     <div className='mx-3 lg:mx-1 lg:grid grid-cols-2 gap-4 mt-8'>
                         {cars?.map((car, i) => <CarShortData key={i} car={car}></CarShortData>)}
                     </div>
-                    <div className='mt-5 text-center'><Link href='http://localhost:3000/' as='' className='text-2xl border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] pb-2'>Back to home page &gt;</Link></div>
+                    <div className='mt-5 text-center'><Link href='/' as='' className='text-2xl border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] pb-2'>Back to home page &gt;</Link></div>
                 </div>
             </section>
             <Footer></Footer>

@@ -8,7 +8,7 @@ const useToken = (user) => {
     const dispatch = useDispatch()
     const email = user?.user?.email
     if (email) {
-        fetch(`http://localhost:5000/login?email=${email}`)
+        fetch(`https://autodrive-server.vercel.app/login?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 localStorage.setItem('token', data.token)

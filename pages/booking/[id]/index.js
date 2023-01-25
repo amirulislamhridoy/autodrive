@@ -24,7 +24,7 @@ const Index = () => {
 
     useEffect(() => {
         if (id && email) {
-            axios.get(`http://localhost:5000/car/getCar/${id}?email=${email}`, {
+            axios.get(`https://autodrive-server.vercel.app/car/getCar/${id}?email=${email}`, {
                 headers: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
             }).then(res => setCar(res.data)).catch(err => {
                 if ((err?.response?.status === 401) || (err?.response?.status === 404)) {
@@ -37,7 +37,7 @@ const Index = () => {
         }
     }, [id, email])
     useEffect(() => {
-        axios.get('http://localhost:5000/location/getAll')
+        axios.get('https://autodrive-server.vercel.app/location/getAll')
             .then(function (response) {
                 setLocations(response.data);
             })
@@ -72,7 +72,7 @@ const Index = () => {
         }
         const data = {email: user?.email, location, carName: car?.name, fromDate: fromDate, toDate, number}
         
-        axios.post('http://localhost:5000/booking/add', data)
+        axios.post('https://autodrive-server.vercel.app/booking/add', data)
           .then(function (response) {
             if((response.status === 200) && response.data){
                 toast.success(response.data)
