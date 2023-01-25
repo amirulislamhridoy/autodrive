@@ -1,13 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Image from "next/image";
 
 const CarShortData = (props) => {
     const router = useRouter()
     const car = props.car
     return (
         <div className='my-5 lg:my-0 sm:flex shadow-xl bg-white sm:pr-3 rounded-md text-center sm:text-start px-5'>
-            <img className='w-6/12 mx-auto' src={car.img} alt=''></img>
+            <Image width='300' height='300' className='w-6/12 mx-auto' src={car.img} alt=''></Image>
             <div className='self-center pb-5 sm:py-5'>
                 <h2 className='text-md sm:text-xl font-semibold '>Name: {car.name}</h2>
                 <p className='mt-1 '>{car?.description?.slice(0, 74)}...</p>

@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../firebase.init';
 import { signOut } from 'firebase/auth';
+import Image from "next/image";
 
 const Navbar = ({ children }) => {
     const router = useRouter()
@@ -19,7 +20,7 @@ const Navbar = ({ children }) => {
             <nav className=" max-w-7xl mx-auto border-gray-200 px-2 sm:px-4 py-2.5">
                 <div className="container flex flex-wrap items-center justify-between mx-auto">
                     <Link href="/" className="flex items-center">
-                        <img src="https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/logo-autodrive.png" className="h-6 mr-3 sm:h-9" alt="autodrive logo"></img>
+                        <Image src="https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/logo-autodrive.png" width='150' height='80' className="h-6 mr-3 sm:h-9" alt="autodrive logo"></Image>
                     </Link>
                     <div className="flex lg:order-2">
                         {user?.email ? <button type="button" onClick={logoutFn} className="font-bold bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-3 sm:px-5 py sm:py-2 text-center text-xs mr-3 lg:mr-0 dark:bg-blue-600 dark:focus:ring-blue-800 hover:scale-110 duration-300">LOG OUT</button> : <button type="button" onClick={() => router.push('/login')} className="font-bold bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-3 sm:px-5 sm:py-2 text-center text-xs mr-3 lg:mr-0 dark:bg-blue-600 dark:focus:ring-blue-800 hover:scale-110 duration-300">LOGIN</button>}

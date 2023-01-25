@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const AboutContent = () => {
@@ -15,14 +16,14 @@ const AboutContent = () => {
                     </article>
                 </div>
                 <div className='mt-10 md:mt-0'>
-                    <img className='w-full' decoding="async" src="https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/elementor/thumbs/about-sect2-pibdgmmbnjp4n2uyoz0wdsalpq9opx47mxc31vyzeg.jpg" title="about-sect2" alt="about-sect2" />
+                    <Image width='620' height='340' className='w-full' decoding="async" src="https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/elementor/thumbs/about-sect2-pibdgmmbnjp4n2uyoz0wdsalpq9opx47mxc31vyzeg.jpg" title="about-sect2" alt="about-sect2" />
                     <article className='text-justify mt-4'>
                         Venenatis quam diam nisi id viverra dui proin quisque. Ridicul netus faucibus. Venenatis quam diam nisi id viverra dui proin quisque. Ridiculus adipiscing massa at amet, mi at auctor. Donec vestibulum quis morbi sit non feugiat justo, sagittis. Erat amet id netus faucibus.
                     </article>
                 </div>
             </div>
             <div className='mt-8 md:mt-14 lg:flex gap-x-6 xl:gap-x-12'>
-                <img className='w-full max-h-[450px]' decoding="async" src="https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/elementor/thumbs/about-sect-pibde2i5gozsa780uqucux1dp9i78lu4pfqg89rr4m.jpg" title="about-sect" alt="about-sect" />
+                <Image width='581' height='450' className='w-full max-h-[450px]' decoding="async" src="https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/elementor/thumbs/about-sect-pibde2i5gozsa780uqucux1dp9i78lu4pfqg89rr4m.jpg" title="about-sect" alt="about-sect" />
                 <div className=' w-full px-6 sm:px-10 py-3 xl:px-16 sm:py-7 xl:py-10' style={{backgroundColor: '#FFC947' ,backgroundImage: `url('https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/line-pattern.png')`}}>
                     <p className='font-bold text-[#185ADB]'>WHY</p>
                     <h2 className='text-xl sm:text-4xl font-bold mt-2'>WHY BOOK WITH AUTODRIVE?</h2>

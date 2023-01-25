@@ -10,6 +10,7 @@ import axios from "axios";
 import 'react-day-picker/dist/style.css';
 import Loading from '../../../components/Loading';
 import Link from "next/link";
+import Image from "next/image";
 
 const Index = () => {
     const router = useRouter()
@@ -91,7 +92,7 @@ const Index = () => {
                 <div className='sm:flex justify-between items-center gap-x-3'>
                     <h2 className='my-4 sm:my-44 xl:my-52'><span className='text-xl md:text-2xl'>Hello {name || email},</span> <br /> <span>Are you want to booking {car?.name}?</span></h2>
                     <div className='hidden sm:block bg-gray-300 px-1 py-[10%]'></div>
-                    <div><img src={car.img} alt='car'></img></div>
+                    <div><Image width='512' height='512' src={car.img} alt='car'></Image></div>
                 </div>
                 <form onSubmit={fromSubmit} className='flex gap-x-2 gap-y-1 flex-wrap'>
                     <select name='location' className="flex-1 form-select form-select-lg block w-full px-4 py-2 font-normal bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:outline-none min-w-[170px] border-2" aria-label=".form-select-lg example">

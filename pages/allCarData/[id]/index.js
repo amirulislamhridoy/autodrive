@@ -9,6 +9,7 @@ import Loading from "../../../components/Loading";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import { signOut } from 'firebase/auth';
+import Image from "next/image";
 
 const Index = () => {
     const [car, setCar] = useState({})
@@ -42,7 +43,7 @@ const Index = () => {
             <Navbar>SingleCar</Navbar>
             <section className='max-w-7xl mx-1 xl:mx-auto border-2 m-2'>
                 <div className='md:flex items-center lg:gap-x-4'>
-                    <img className='md:w-6/12 xl:w-12/12' src={car?.img} alt='car? image'></img>
+                    <Image width='512' height='512' className='md:w-6/12 xl:w-12/12' src={car?.img} alt='car? image'></Image>
                     <div className='ml-4 md:ml-0 mr-4 my-2 lg:my-0'>
                         <h3 className='text-2xl font-semibold'>{car?.name}</h3>
                         <article className='mt-2 lg:mt-3 text-justify'>{car?.description}</article>

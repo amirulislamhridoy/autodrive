@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const ServicesContent = () => {
@@ -16,9 +17,9 @@ const ServicesContent = () => {
                 </div>
             </div>
             <div className='mt-4 md:mt-0 md:w-6/12 mr-10 2xl:mr-0' style={{ position: 'relative' }}>
-                <img className='w-full' src='https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/at-a-car-dealership-buying-a-car-2.jpg' alt=''></img>
+                <Image width='460' height='306' className='w-full' src='https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/at-a-car-dealership-buying-a-car-2.jpg' alt=''></Image>
                 {/* <div className='' style={{background: `url(${'https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/Pattern.png'})`}}>a</div> */}
-                <img className='max-w-[200px] sm:max-w-[300px] md:max-w-[220px] lg:max-w-[300px] absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-40px] right-[-20px] sm:right-[-30px] lg:right-[-40px] z-[-1]' src='https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/Pattern.png' alt=''></img>
+                <Image width='300' height='300' className='max-w-[200px] sm:max-w-[300px] md:max-w-[220px] lg:max-w-[300px] absolute bottom-[-20px] sm:bottom-[-30px] lg:bottom-[-40px] right-[-20px] sm:right-[-30px] lg:right-[-40px] z-[-1]' src='https://kitnew.moxcreative.com/mobirentz/wp-content/uploads/sites/28/2022/12/Pattern.png' alt=''></Image>
             </div>
         </section>
     );
