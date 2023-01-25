@@ -17,18 +17,6 @@ const Banner = () => {
     const pastMonth = new Date()
     const [user, loading, error] = useAuthState(auth);
 
-    let footer;
-    if (range?.from) {
-        if (!range.to) {
-          footer = <p>{format(range.from, 'PPP')}</p>;
-        } else if (range.to) {
-          footer = (
-            <p>
-              {format(range.from, 'PPP')}–{format(range.to, 'PPP')}
-            </p>
-          );
-        }
-      }
     useEffect(() => {
         axios.get('http://localhost:5000/car/getAll')
             .then(function (response) {
@@ -78,9 +66,9 @@ const Banner = () => {
         
         axios.post('http://localhost:5000/booking/add', data)
           .then(function (response) {
-            console.log(response);
             if((response.status === 200) && response.data){
                 toast.success(response.data)
+                e.target.number.value = '0150000000'
             }
           })
           .catch(function (error) {
@@ -99,18 +87,18 @@ const Banner = () => {
                     <div className='p-7 bg-[#0a1931]'>
                         <form onSubmit={fromSubmit} className='flex gap-x-2 gap-y-1 flex-wrap'>
                             <select name='location' className="flex-1 form-select form-select-lg block w-full px-4 py-2 font-normal bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:outline-none min-w-[170px]" aria-label=".form-select-lg example">
-                                <option className='hidden' defaultValue>Pick Us Location</option>
+                                <option className='hidden' >Pick Us Location</option>
                                 {locations?.map(location => <option key={location._id} vlaue={location.name}>{location.name}</option>)}
                             </select>
 
                             <select name='car' className="flex-1 form-select form-select-lg block w-full px-4 py-2 font-normal bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:outline-none min-w-[170px]" aria-label=".form-select-lg example">
-                                <option className='hidden' defaultValue>Car Name</option>
+                                <option className='hidden'>Car Name</option>
                                 {cars?.map(car => <option key={car._id} vlaue={car.name}>{car.name}</option>)}
                             </select>
                             {/* type="text" onFocus={(e) => e.target.type = 'date'} */}
                             <div className='flex-1 min-w-[170px] relative group'>
                                 {/* <input name='date' type='text' value={`${range?.from ? format(range?.from, 'PPP'): 'Date'}${range?.to ? `-${format(range?.from, 'PPP')}`: ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0" placeholder="Date" required /> */}
-                                <input name='date' type='text' value={`${range?.from ? (range?.from?.getDate() + '/' + range?.from?.getMonth() + "/" + range?.from?.getFullYear()): 'Date'}${range?.to ? (" - " + range?.to?.getDate() + '/' + range?.to?.getMonth() + "/" + range?.to?.getFullYear()): ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0" placeholder="Date" required />
+                                <input name='date' type='text' defaultValue='Date' value={`${range?.from ? (range?.from?.getDate() + '/' + range?.from?.getMonth() + "/" + range?.from?.getFullYear()): 'Date'}${range?.to ? (" - " + range?.to?.getDate() + '/' + range?.to?.getMonth() + "/" + range?.to?.getFullYear()): ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0" placeholder="Date" required />
                                 <DayPicker
                                 className='Day-Picker group-hover:block hidden absolute bg-white sm:p-5 rounded-xl rounded-br-none right-0 lg:right-auto lg:left-0 lg:rounded-bl-none shadow-xl overflow-x-auto whitespace-nowrap top-[-232px] sm:top-[-320px]'
                                 style={{margin: '0'}}

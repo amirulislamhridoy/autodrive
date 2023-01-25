@@ -8,6 +8,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import axios from "axios";
 import 'react-day-picker/dist/style.css';
+import Loading from '../../../components/Loading';
+import Link from "next/link";
 
 const Index = () => {
     const router = useRouter()
@@ -44,29 +46,48 @@ const Index = () => {
             })
     }, [])
 
+    if(loading){
+        return <Loading />
+    }
     const fromSubmit = (e) => {
         e.preventDefault()
-        if (!user) {
+        if(!user){
             router.push('/login')
             return toast.error("First you should login in this website.")
         }
         const location = e.target.location.value
-        const car = e.target.car.value
         const date = e.target.date.value
         const number = e.target.number.value
-        if ((location === 'Pick Us Location') && (car === 'Car Name')) {
-            return toast.error('Please select location & car name.')
-        } else if (location === 'Pick Us Location') {
-            return toast.error('Please select car name.')
-        } else if (car === 'Car Name') {
-            return toast.error('Please select car name')
+        if (location === 'Pick Us Location') {
+            return toast.error('Please select location')
+        } else if(date === 'Date'){
+            return toast.error('Please select date')
+        }else if(number === '0150000000'){
+            return toast.error('Please write your phone number')
         }
+        let fromDate = date.split(' - ')[0]
+        let toDate = date.split(' - ')[1]
+        if((fromDate === toDate) || !toDate){
+            toDate = ''
+        }
+        const data = {email: user?.email, location, carName: car?.name, fromDate: fromDate, toDate, number}
+        
+        axios.post('http://localhost:5000/booking/add', data)
+          .then(function (response) {
+            if((response.status === 200) && response.data){
+                toast.success(response.data)
+                e.target.number.value = '0150000000'
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
     return (
         <main>
             <Head><title>Booking</title></Head>
             <Navbar>Booking</Navbar>
-            <section className='max-w-7xl mx-1 xl:mx-auto mb-10 md:mb-20'>
+            <section className='max-w-7xl mx-1 xl:mx-auto mb-10 '>
                 <div className='sm:flex justify-between items-center gap-x-3'>
                     <h2 className='my-4 sm:my-44 xl:my-52'><span className='text-xl md:text-2xl'>Hello {name || email},</span> <br /> <span>Are you want to booking {car?.name}?</span></h2>
                     <div className='hidden sm:block bg-gray-300 px-1 py-[10%]'></div>
@@ -96,6 +117,9 @@ const Index = () => {
                         BOOK NOW
                     </button>
                 </form>
+                <div className='mt-10 text-center'>
+                    You can see you all booking cars. <Link href='/dashboard' className='border-b-2 border-[#0000EE] hover:border-[#dddddd]'>Click</Link>
+                </div>
             </section>
             <Footer></Footer>
         </main>
