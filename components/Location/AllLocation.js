@@ -20,8 +20,8 @@ const AllLocation = () => {
                         </div>
                         <p className='text-base'>{location.address}</p>
                         <p className='text-base'>{location.call}</p>
-                        <p className='text-base'><i class="fa-regular fa-envelope"></i> {location.email}</p>
-                        <Link className='text-sm border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] font-semibold' target="_blank" rel="noopener noreferrer" href={location.url} as=''>View Location <i class="fa-solid fa-angles-right"></i></Link>
+                        <p className='text-base'><i className="fa-regular fa-envelope"></i> {location.email}</p>
+                        <Link className='text-sm border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] font-semibold' target="_blank" rel="noopener noreferrer" href={location.url} as=''>View Location <i className="fa-solid fa-angles-right"></i></Link>
                     </div>)}
                 </div>
             </div>
