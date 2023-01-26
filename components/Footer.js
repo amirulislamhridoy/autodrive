@@ -7,7 +7,7 @@ const Footer = () => {
             <div className='mx-1 xl:mx-auto max-w-7xl '>
                 <div className='sm:flex justify-between'>
                     <div className='max-w-[300px]'>
-                        <Image width='150' height='80' className='mb-2 sm:mb-7' src='https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/logo-autodrive-dark.png'></Image>
+                        <Image width='150' height='80' className='mb-2 sm:mb-7' src='https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/logo-autodrive-dark.png' alt='autodrive logo'></Image>
                         <p className='text-[#545e70]'>Venenatis quam diam nisi id viverra dui proin quisque. ridicul netus faucib venen atis quam diam nisi id viverra dui</p>
                     </div>
                     <div className="mt-5 sm:mt-0">
