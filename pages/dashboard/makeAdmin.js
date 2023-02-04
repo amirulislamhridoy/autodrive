@@ -14,8 +14,8 @@ const MakeAdmin = () => {
     const [user, loading] = useAuthState(auth);
 
     useEffect(() => {
-        dispatch(fetchUser())
-    }, [])
+        // dispatch(fetchUser(user))
+    }, [user])
 
     if (loading) {
         return <Loading />

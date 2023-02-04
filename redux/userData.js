@@ -1,14 +1,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+// import { useAuthState } from 'react-firebase-hooks/auth';
+// import auth from './../firebase.init';
 
 const initialState = {
     data : {},
     loading: false,
     error: null
 }
-
-export const fetchUser = createAsyncThunk('user/fetchUser', async() => {
-    const response = await axios.get('https://autodrive-server.vercel.app/car/getAll')
+export const fetchUser = createAsyncThunk('user/fetchUser', async(user) => {
+    // const [user, loading, error] = useAuthState(auth)
+    console.log(user)
+    const response = await axios.get(`http://localhost:5000/user?email={user?email}`)
     return response.data
 })
 
