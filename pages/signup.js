@@ -71,7 +71,8 @@ const Signup = () => {
 
             <div className='mx-1 xl:mx-auto max-w-7xl flex justify-center lg:justify-between items-center mt-4 sm:mt-8 lg:mt-14 xl:mt-20 2xl:mt-32 mb-3'>
                 <div className='mg:w-6/12 xl:w-5/12 p-4 md:p-7 md:pt-10 border rounded-lg'>
-                    <Image width='188' height='42' className='bg-[#bbbbbb] mb-4' src='https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/logo-autodrive.png' alt=''></Image>
+                    {/* <Image width='188' height='42' className='bg-[#bbbbbb] mb-4' src='https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/logo-autodrive.png' alt=''></Image> */}
+                    <Image width='188' height='42' className='mb-2 sm:mb-7' src='https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/logo-autodrive-dark.png' alt='autodrive logo'></Image>
                     <h2 className='text-2xl font-semibold mb-2.5'>Welcome in Sign Up</h2>
                     <p className='text-sm text-[#aaaaaa]'>Start your website in seconds. Already have an account? <Link className='text-[#2c63ec] font-semibold' href='/login' alt=''>Login</Link></p>
                     <form className='mt-4 lg:mt-6' onSubmit={formHandle}>
