@@ -3,14 +3,12 @@ import Navbar from "../Navbar";
 import Footer from '../../components/Footer'
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
-import {dashboardToggle} from "../../redux/dashboardToggle";
+import { useState } from "react";
 
 const DashboardLayout = ({ children }) => {
-    const toggle = useSelector(state => state.dashboardToggle.value)
-    const dispatch = useDispatch()
-    
+
     const router = useRouter()
+    const [open, setOpen] = useState(true);
     return (
         <main>
             <Head>
@@ -19,34 +17,64 @@ const DashboardLayout = ({ children }) => {
             </Head>
             <Navbar>Dashboard</Navbar>
             <section className='max-w-7xl mx-auto flex overflow-hidden'>
-                <aside className={`bg-[#ccc] lg:p-5 pl-2 pr-4 sm:px-4 lg:pl-10 pb-10 min-h-[50vh] relative duration-300 ${toggle ? 'w-[45px] sm:w-[50px] md:w-[60px] lg:w-[100px]': 'md:w-[300px] min-w-[150px]'}`}>
-                    <i onClick={() => dispatch(dashboardToggle())} className={`fa-solid fa-angle-right bg-white border-[1px] border-[black] px-[4px] py-[2px] sm:px-2 p sm:py-1 text-[10px] sm:text-sm rounded-full absolute right-[-7px] sm:right-[-12px] top-[5px] md:top-[10px] lg:top-[15px] cursor-pointer duration-300 ${!toggle && 'rotate-180'}`}></i>
-                    <div>
-                        <Link className={`text-sm md:text-xl mt-[10px] sm:mt-[20px] lg:mt-[30px] inline-block grid grid-cols-8 ${router.route === '/dashboard' && 'text-white'}`} href='/dashboard'> <i className="fa-solid fa-user self-center"></i> <span className={`col-start-3 col-end-9 md:col-start-2 md:col-end-9 duration-300 ml-2 ${toggle && 'hidden'}`}>Profile</span></Link>
+                <div className={`${open ? "w-72" : "w-12 sm:w-20"} bg-dark-purple p-1 sm:p-5 pt-5 sm:pt-8 relative duration-300 bg-[#ccc] min-h-[70vh]`}>
+                    <i onClick={() => setOpen(!open)} className={`fa-solid fa-angle-right absolute cursor-pointer -right-3 top-9 px-2 hover:bg-white border-black py-1 border-2 rounded-full  ${open && "rotate-180"}`}></i>
+                    <div className="flex gap-x-4 items-center">
+                        <h1 className={`text-white origin-left font-medium text-xl duration-200 ${!open && "scale-0"}`}>
+                            Dashboard
+                        </h1>
                     </div>
-                    <div>
-                        <Link className={`text-sm md:text-xl mt-[5px] sm:mt-[10px] md:mt-[20px] lg:mt-[30px] inline-block grid grid-cols-8 ${router?.route === '/dashboard/addCar' && 'text-white'}`} href='/dashboard/addCar'> <i className="fa-solid fa-plus self-center"></i> <span className={`col-start-3 col-end-9 md:col-start-2 md:col-end-9 duration-300 ml-2 ${toggle && 'hidden'}`}>Add Car</span></Link>
+                    <div className="pt-4">
+                        <Link href='/dashboard' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 ${router.route === '/dashboard' && 'text-white'}`}>
+                            <i className="text-xl fa-solid fa-user"></i>
+                            <span className={`${!open && "hidden"} origin-left duration-200 whitespace-nowrap`}>
+                                Profile
+                            </span>
+                        </Link>
+                        <Link href='/dashboard/addCar' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 mt-2 ${router.route === '/dashboard/addCar' && 'text-white'}`}>
+                            <i className="text-xl fa-solid fa-plus self-center"></i>
+                            <span className={`${!open && "hidden"} origin-left duration-200 whitespace-nowrap`}>
+                                Add Car
+                            </span>
+                        </Link>
+                        <Link href='/dashboard/makeAdmin' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 mt-2 ${router.route === '/dashboard/makeAdmin' && 'text-white'}`}>
+                            <i className="fa-solid fa-user-group self-center"></i>
+                            <span className={`${!open && "hidden"} origin-left duration-200 whitespace-nowrap`}>
+                                Make Admin
+                            </span>
+                        </Link>
+                        <Link href='/dashboard/manageCars' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 mt-2 ${router.route === '/dashboard/manageCars' && 'text-white'}`}>
+                            <i className="fa-solid fa-car self-center"></i>
+                            <span className={`${!open && "hidden"} origin-left duration-200 whitespace-nowrap`}>
+                                Manage Cars
+                            </span>
+                        </Link>
+                        <Link href='/dashboard/manageOrders' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 mt-2 ${router.route === '/dashboard/manageOrders' && 'text-white'}`}>
+                            <i className="text-xl fa-brands fa-first-order self-center"></i>
+                            <span className={`${!open && "hidden"} origin-left duration-200 whitespace-nowrap`}>
+                                Manage Orders
+                            </span>
+                        </Link>
+                        <Link href='/dashboard/myOrders' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 mt-2 ${router.route === '/dashboard/myOrders' && 'text-white'}`}>
+                            <i className="text-xl fa-brands fa-first-order-alt self-center"></i>
+                            <span className={`${!open && "hidden"} origin-left duration-200 whitespace-nowrap`}>
+                                My Orders
+                            </span>
+                        </Link>
+                        <Link href='/dashboard/addReview' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 mt-2 ${router.route === '/dashboard/addReview' && 'text-white'}`}>
+                            <i className="text-xl fa-solid fa-comment self-center"></i>
+                            <span className={`${!open && "hidden"} origin-left duration-200 whitespace-nowrap`}>
+                                Add Review
+                            </span>
+                        </Link>
+                        <Link href='/dashboard/proposCar' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 mt-2 ${router.route === '/dashboard/proposCar' && 'text-white'}`}>
+                            <i className="text-xl fa-solid fa-handshake self-center"></i>
+                            <span className={`${!open && "hidden"} origin-left duration-200 whitespace-nowrap`}>
+                                Car&apos;s Propos
+                            </span>
+                        </Link>
                     </div>
-                    <div>
-                        <Link className={`text-sm md:text-xl mt-[5px] sm:mt-[10px] md:mt-[20px] lg:mt-[30px] inline-block grid grid-cols-8 ${router?.route === '/dashboard/makeAdmin' && 'text-white'}`} href='/dashboard/makeAdmin'> <i className="fa-solid fa-user-group self-center"></i> <span className={`col-start-3 col-end-9 md:col-start-2 md:col-end-9 duration-300 ml-2 ${toggle && 'hidden'}`}>Make Admin</span></Link>
-                    </div>
-                    <div>
-                        <Link className={`text-sm md:text-xl mt-[5px] sm:mt-[10px] md:mt-[20px] lg:mt-[30px] inline-block grid grid-cols-8 ${router?.route === '/dashboard/mangeCars' && 'text-white'}`} href='/dashboard/mangeCars'> <i className="fa-solid fa-car self-center"></i> <span className={`col-start-3 col-end-9 md:col-start-2 md:col-end-9 duration-300 ml-2 ${toggle && 'hidden'}`}>Manage Cars</span></Link>
-                    </div>
-                    <div>
-                        <Link className={`text-sm md:text-xl mt-[5px] sm:mt-[10px] md:mt-[20px] lg:mt-[30px] inline-block grid grid-cols-8 ${router?.route === '/dashboard/manageOrders' && 'text-white'}`} href='/dashboard/manageOrders'> <i className="fa-brands fa-first-order self-center"></i> <span className={`col-start-3 col-end-9 md:col-start-2 md:col-end-9 duration-300 ml-2 ${toggle && 'hidden'}`}>Manage Orders</span></Link>
-                    </div>
-                    <div>
-                        <Link className={`text-sm md:text-xl mt-[5px] sm:mt-[10px] md:mt-[20px] lg:mt-[30px] inline-block grid grid-cols-8  ${router?.route === '/dashboard/myOrders' && 'text-white'}`} href='/dashboard/myOrders'> <i className="fa-brands fa-first-order-alt self-center"></i> <span className={`col-start-3 col-end-9 md:col-start-2 md:col-end-9 duration-300 ml-2 ${toggle && 'hidden'}`}>My Orders</span></Link>
-                    </div>
-                    <div>
-                        <Link className={`text-sm md:text-xl mt-[5px] sm:mt-[10px] md:mt-[20px] lg:mt-[30px] inline-block grid grid-cols-8  ${router?.route === '/dashboard/addReview' && 'text-white'}`} href='/dashboard/addReview'> <i className="fa-solid fa-comment self-center"></i> <span className={`col-start-3 col-end-9 md:col-start-2 md:col-end-9 duration-300 ml-2 ${toggle && 'hidden'}`}>Add Review</span></Link>
-                    </div>
-                    <div>
-                        <Link className={`text-sm md:text-xl mt-[5px] sm:mt-[10px] md:mt-[20px] lg:mt-[30px] inline-block grid grid-cols-8 ${router?.route === '/dashboard/proposCar' && 'text-white'}`} href='/dashboard/proposCar'> <i className="fa-solid fa-handshake self-center"></i> <span className={`col-start-3 col-end-9 md:col-start-2 md:col-end-9 duration-300 ml-2 ${toggle && 'hidden'}`}>Car&apos;s Propos</span></Link>
-                    </div>
-                    
-                </aside>
+                </div>
                 <aside className='ml-8 mt-10 overflow-x-auto'>
                     {children}
                 </aside>
