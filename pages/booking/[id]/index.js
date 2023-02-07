@@ -11,6 +11,7 @@ import 'react-day-picker/dist/style.css';
 import Loading from '../../../components/Loading';
 import Link from "next/link";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 const Index = () => {
     const router = useRouter()
@@ -63,7 +64,7 @@ const Index = () => {
             return toast.error('Please select location')
         } else if(date === 'Date'){
             return toast.error('Please select date')
-        }else if(number === '0150000000'){
+        }else if(number.includes('0150000000')){
             return toast.error('Please write your phone number')
         }
         let fromDate = date.split(' - ')[0]
@@ -73,15 +74,16 @@ const Index = () => {
         }
         const data = {email: user?.email, location, carName: car?.name, fromDate: fromDate, toDate, number}
         
-        axios.post('https://autodrive-server.vercel.app/booking/add', data)
+        axios.post(`http://localhost:5000/booking/add?email=${user.email}`, data)
           .then(function (response) {
             if((response.status === 200) && response.data){
                 toast.success(response.data)
+                e.target.reset()
                 e.target.number.value = '0150000000'
             }
           })
           .catch(function (error) {
-            console.log(error);
+            console.log(error)
           });
     }
     return (
