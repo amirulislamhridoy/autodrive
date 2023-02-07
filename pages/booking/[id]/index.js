@@ -74,7 +74,7 @@ const Index = () => {
         }
         const data = {email: user?.email, location, carName: car?.name, fromDate: fromDate, toDate, number}
         
-        axios.post(`http://localhost:5000/booking/add?email=${user.email}`, data)
+        axios.post(`https://autodrive-server.vercel.app/booking/add?email=${user.email}`, data)
           .then(function (response) {
             if((response.status === 200) && response.data){
                 toast.success(response.data)

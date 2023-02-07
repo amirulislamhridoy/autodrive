@@ -49,16 +49,16 @@ const DashboardLayout = ({ children }) => {
                                 Manage Cars
                             </span>
                         </Link>
-                        <Link href='/dashboard/manageOrders' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 mt-2 ${router.route === '/dashboard/manageOrders' && 'text-white'}`}>
+                        <Link href='/dashboard/manageBookings' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 mt-2 ${router.route === '/dashboard/manageBookings' && 'text-white'}`}>
                             <i className="text-xl fa-brands fa-first-order self-center"></i>
                             <span className={`${!open && "hidden"} origin-left duration-200 whitespace-nowrap`}>
-                                Manage Orders
+                                Manage Bookings
                             </span>
                         </Link>
-                        <Link href='/dashboard/myOrders' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 mt-2 ${router.route === '/dashboard/myOrders' && 'text-white'}`}>
+                        <Link href='/dashboard/myBookings' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 mt-2 ${router.route === '/dashboard/myBookings' && 'text-white'}`}>
                             <i className="text-xl fa-brands fa-first-order-alt self-center"></i>
                             <span className={`${!open && "hidden"} origin-left duration-200 whitespace-nowrap`}>
-                                My Orders
+                                My Bookings
                             </span>
                         </Link>
                         <Link href='/dashboard/addReview' className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-4 mt-2 ${router.route === '/dashboard/addReview' && 'text-white'}`}>
