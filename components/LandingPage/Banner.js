@@ -13,11 +13,11 @@ const Banner = () => {
     const router = useRouter()
     const [locations, setLocations] = useState([])
     const [cars, setCars] = useState([])
-    const [carFullData, setCarFullData] =useState({})
+    const [carFullData, setCarFullData] = useState({})
     const [range, setRange] = useState()
     const pastMonth = new Date()
     const [user, loading, error] = useAuthState(auth);
-console.log(carFullData)    
+
     useEffect(() => {
         axios.get('https://autodrive-server.vercel.app/car/getAll')
             .then(function (response) {
@@ -88,7 +88,7 @@ console.log(carFullData)
                                 {locations?.map(location => <option key={location._id} vlaue={location.name}>{location.name}</option>)}
                             </select>
 
-                            <select name='car' onChange={e => setCarFullData(cars.find(car => (`${car.name}${car?.model ? (` ${car?.model}`) :'' }`) === e.target.value))} className="flex-1 form-select form-select-lg block w-full px-4 py-2 font-normal bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:outline-none min-w-[170px]" aria-label=".form-select-lg example">
+                            <select name='car' onChange={e => setCarFullData(cars.find(car => (`${car.name}${car?.model ? (` ${car?.model}`) : ''}`) === e.target.value))} className="flex-1 form-select form-select-lg block w-full px-4 py-2 font-normal bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:outline-none min-w-[170px]" aria-label=".form-select-lg example">
                                 <option className='hidden'>Car Name</option>
                                 {cars?.map(car => <option key={car._id} vlaue={car.name}>{car.name}{car?.model && (car?.model ? ` ${car?.model}` : '')}</option>)}
                             </select>
@@ -119,5 +119,15 @@ console.log(carFullData)
         </section>
     );
 };
+
+export const getServerSideProps = async () => {
+    axios.get('https://autodrive-server.vercel.app/car/getAll')
+        .then(function (response) {
+            setCars(response.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+}
 
 export default Banner;
