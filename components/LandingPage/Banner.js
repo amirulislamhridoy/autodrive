@@ -13,10 +13,11 @@ const Banner = () => {
     const router = useRouter()
     const [locations, setLocations] = useState([])
     const [cars, setCars] = useState([])
+    const [carFullData, setCarFullData] =useState({})
     const [range, setRange] = useState()
     const pastMonth = new Date()
     const [user, loading, error] = useAuthState(auth);
-
+console.log(carFullData)    
     useEffect(() => {
         axios.get('https://autodrive-server.vercel.app/car/getAll')
             .then(function (response) {
@@ -38,42 +39,38 @@ const Banner = () => {
 
     const fromSubmit = (e) => {
         e.preventDefault()
-        if(!user){
+        if (!user) {
             router.push('/login')
             return toast.error("First you should login in this website.")
         }
-        const location = e.target.location.value
         const car = e.target.car.value
+        const location = e.target.location.value
         const date = e.target.date.value
         const number = e.target.number.value
-        if ((location === 'Pick Us Location') && (car === 'Car Name')) {
-            return toast.error('Please select location & car name.')
-        } else if (location === 'Pick Us Location') {
-            return toast.error('Please select car name.')
-        } else if (car === 'Car Name') {
-            return toast.error('Please select car name')
-        } else if(date === 'Date'){
+        if (location === 'Pick Us Location') {
+            return toast.error('Please select location')
+        } else if (date === 'Date') {
             return toast.error('Please select date')
-        }else if(number === '0150000000'){
+        } else if (number.includes('0150000000')) {
             return toast.error('Please write your phone number')
         }
         let fromDate = date.split(' - ')[0]
         let toDate = date.split(' - ')[1]
-        if((fromDate === toDate) || !toDate){
+        if ((fromDate === toDate) || !toDate) {
             toDate = ''
         }
-        const data = {email: user?.email, location, carName: car, fromDate: fromDate, toDate, number}
-        
-        axios.post('https://autodrive-server.vercel.app/booking/add', data)
-          .then(function (response) {
-            if((response.status === 200) && response.data){
-                toast.success(response.data)
-                e.target.number.value = '0150000000'
-            }
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        const data = { email: user?.email, location, carName: car, fromDate: fromDate, toDate, number, carId: carFullData._id, perDay: carFullData.dayHire }
+        axios.post(`http://localhost:5000/booking/add?email=${user?.email}`, data)
+            .then(res => {
+                if (res.status === 200 && res?.data) {
+                    toast(res.data)
+                    e.target.reset()
+                    e.target.number.value = '0150000000'
+                }
+            })
+            .catch(e => {
+                console.log('error', e)
+            })
     }
     return (
         <section className='bg-cover bg-fixed bg-center bg-no-repeat bg-no-repeat min-h-screen' style={{ backgroundImage: ` linear-gradient(rgba(10, 25, 49, 0.5), rgba(10, 25, 49, 0.7)), url('https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/hero-home.jpg')` }}>
@@ -91,19 +88,19 @@ const Banner = () => {
                                 {locations?.map(location => <option key={location._id} vlaue={location.name}>{location.name}</option>)}
                             </select>
 
-                            <select name='car' className="flex-1 form-select form-select-lg block w-full px-4 py-2 font-normal bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:outline-none min-w-[170px]" aria-label=".form-select-lg example">
+                            <select name='car' onChange={e => setCarFullData(cars.find(car => (`${car.name}${car?.model ? (` ${car?.model}`) :'' }`) === e.target.value))} className="flex-1 form-select form-select-lg block w-full px-4 py-2 font-normal bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:outline-none min-w-[170px]" aria-label=".form-select-lg example">
                                 <option className='hidden'>Car Name</option>
-                                {cars?.map(car => <option key={car._id} vlaue={car.name}>{car.name}</option>)}
+                                {cars?.map(car => <option key={car._id} vlaue={car.name}>{car.name}{car?.model && (car?.model ? ` ${car?.model}` : '')}</option>)}
                             </select>
                             {/* type="text" onFocus={(e) => e.target.type = 'date'} */}
                             <div className='flex-1 min-w-[170px] relative group'>
                                 {/* <input name='date' type='text' value={`${range?.from ? format(range?.from, 'PPP'): 'Date'}${range?.to ? `-${format(range?.from, 'PPP')}`: ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0" placeholder="Date" required /> */}
-                                <input name='date' type='text' defaultValue='Date' value={`${range?.from ? (range?.from?.getDate() + '/' + range?.from?.getMonth() + "/" + range?.from?.getFullYear()): 'Date'}${range?.to ? (" - " + range?.to?.getDate() + '/' + range?.to?.getMonth() + "/" + range?.to?.getFullYear()): ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0" placeholder="Date" required />
+                                <input name='date' type='text' defaultValue='Date' value={`${range?.from ? (range?.from?.getDate() + '/' + range?.from?.getMonth() + "/" + range?.from?.getFullYear()) : 'Date'}${range?.to ? (" - " + range?.to?.getDate() + '/' + range?.to?.getMonth() + "/" + range?.to?.getFullYear()) : ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0" placeholder="Date" required />
                                 <DayPicker
-                                className='Day-Picker group-hover:block hidden absolute bg-white sm:p-5 rounded-xl rounded-br-none right-0 lg:right-auto lg:left-0 lg:rounded-bl-none shadow-xl overflow-x-auto whitespace-nowrap top-[-232px] sm:top-[-320px]'
-                                style={{margin: '0'}}
+                                    className='Day-Picker group-hover:block hidden absolute bg-white sm:p-5 rounded-xl rounded-br-none right-0 lg:right-auto lg:left-0 lg:rounded-bl-none shadow-xl overflow-x-auto whitespace-nowrap top-[-232px] sm:top-[-320px]'
+                                    style={{ margin: '0' }}
                                     mode="range"
-                                    disabled= {[{ before: new Date()}, new Date()]}
+                                    disabled={[{ before: new Date() }, new Date()]}
                                     defaultMonth={pastMonth}
                                     selected={range}
                                     // footer={footer}

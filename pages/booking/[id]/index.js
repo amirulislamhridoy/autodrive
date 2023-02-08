@@ -48,12 +48,12 @@ const Index = () => {
             })
     }, [])
 
-    if(loading){
+    if (loading) {
         return <Loading />
     }
     const fromSubmit = (e) => {
         e.preventDefault()
-        if(!user){
+        if (!user) {
             router.push('/login')
             return toast.error("First you should login in this website.")
         }
@@ -62,29 +62,28 @@ const Index = () => {
         const number = e.target.number.value
         if (location === 'Pick Us Location') {
             return toast.error('Please select location')
-        } else if(date === 'Date'){
+        } else if (date === 'Date') {
             return toast.error('Please select date')
-        }else if(number.includes('0150000000')){
+        } else if (number.includes('0150000000')) {
             return toast.error('Please write your phone number')
         }
         let fromDate = date.split(' - ')[0]
         let toDate = date.split(' - ')[1]
-        if((fromDate === toDate) || !toDate){
+        if ((fromDate === toDate) || !toDate) {
             toDate = ''
         }
-        const data = {email: user?.email, location, carName: car?.name, fromDate: fromDate, toDate, number}
-        
-        axios.post(`https://autodrive-server.vercel.app/booking/add?email=${user.email}`, data)
-          .then(function (response) {
-            if((response.status === 200) && response.data){
-                toast.success(response.data)
-                e.target.reset()
-                e.target.number.value = '0150000000'
-            }
-          })
-          .catch(function (error) {
-            console.log(error)
-          });
+        const data = { email: user?.email, location, carName: car?.name, fromDate: fromDate, toDate, number, carId: car._id, perDay: car.dayHire }
+        axios.post(`https://autodrive-server.vercel.app/booking/add?email=${user?.email}`, data)
+            .then(res => {
+                if (res.status === 200 && res?.data) {
+                    toast(res.data)
+                    e.target.reset()
+                    e.target.number.value = '0150000000'
+                }
+            })
+            .catch(e => {
+                console.log('error', e)
+            })
     }
     return (
         <main>

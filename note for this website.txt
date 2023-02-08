@@ -28,3 +28,6 @@ https://flowbite.com/docs/components/tables/
 dashboard design youtube link: 
 https://www.youtube.com/watch?v=roDMHxABmHU
 https://www.youtube.com/watch?v=aMjou4yXWdU&t=434s
+
+table design link:
+https://tailwindcomponents.com/component/projects-table
