@@ -75,7 +75,7 @@ const Banner = () => {
     return (
         <section className='bg-cover bg-fixed bg-center bg-no-repeat bg-no-repeat min-h-screen' style={{ backgroundImage: ` linear-gradient(rgba(10, 25, 49, 0.5), rgba(10, 25, 49, 0.7)), url('https://templatekits.themewarrior.com/autodrive/wp-content/uploads/sites/42/2021/12/hero-home.jpg')` }}>
             <Navbar></Navbar>
-            <div className='max-w-7xl mx-auto flex flex-col justify-end' style={{ minHeight: `calc(100vh - 200px` }}>
+            <div className='max-w-7xl mx-auto flex flex-col justify-end' style={{ minHeight: `calc(100vh - 130px` }}>
                 <h1 className='text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold text-center md:mb-5'>Hire The Best Car At <br /> The Best Price</h1>
                 <p className='text-white text-center mx-1 sm:mx-0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
 
@@ -95,7 +95,7 @@ const Banner = () => {
                             {/* type="text" onFocus={(e) => e.target.type = 'date'} */}
                             <div className='flex-1 min-w-[170px] relative group'>
                                 {/* <input name='date' type='text' value={`${range?.from ? format(range?.from, 'PPP'): 'Date'}${range?.to ? `-${format(range?.from, 'PPP')}`: ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0" placeholder="Date" required /> */}
-                                <input name='date' type='text' defaultValue='Date' value={`${range?.from ? (range?.from?.getDate() + '/' + range?.from?.getMonth() + "/" + range?.from?.getFullYear()) : 'Date'}${range?.to ? (" - " + range?.to?.getDate() + '/' + range?.to?.getMonth() + "/" + range?.to?.getFullYear()) : ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0" placeholder="Date" required />
+                                <input name='date' type='text' defaultValue='Date' value={`${range?.from ? (range?.from?.getDate() + '/' + range?.from?.getMonth() + "/" + range?.from?.getFullYear()) : 'Date'}${range?.to ? (" - " + range?.to?.getDate() + '/' + range?.to?.getMonth() + "/" + range?.to?.getFullYear()) : ""}`} className="block w-full py-2 sm:py-4 px-4 outline-0 " placeholder="Date" required />
                                 <DayPicker
                                     className='Day-Picker group-hover:block hidden absolute bg-white sm:p-5 rounded-xl rounded-br-none right-0 lg:right-auto lg:left-0 lg:rounded-bl-none shadow-xl overflow-x-auto whitespace-nowrap top-[-232px] sm:top-[-320px]'
                                     style={{ margin: '0' }}
