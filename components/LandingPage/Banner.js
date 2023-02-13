@@ -21,7 +21,7 @@ const Banner = () => {
     useEffect(() => {
         axios.get('https://autodrive-server.vercel.app/car/getAll')
             .then(function (response) {
-                setCars(response.data);
+                setCars(response.data.cars);
             })
             .catch(function (error) {
                 console.log(error);
