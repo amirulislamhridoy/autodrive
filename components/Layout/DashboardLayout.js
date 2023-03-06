@@ -3,12 +3,13 @@ import Navbar from "../Navbar";
 import Footer from '../../components/Footer'
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import {useSelector, useDispatch} from 'react-redux';
+import { change } from "../../redux/dashboardSideBar";
 
 const DashboardLayout = ({ children }) => {
-
     const router = useRouter()
-    const [open, setOpen] = useState(true);
+    const open = useSelector(state => state.dashboard.value)
+    const dispatch = useDispatch()
     return (
         <main>
             <Head>
@@ -18,7 +19,7 @@ const DashboardLayout = ({ children }) => {
             <Navbar>Dashboard</Navbar>
             <section className='max-w-7xl mx-auto flex overflow-hidden'>
                 <div className={`${open ? "w-72" : "w-12 sm:w-20"} bg-dark-purple p-1 sm:p-5 pt-5 sm:pt-8 relative duration-300 bg-[#ccc] min-h-[70vh]`}>
-                    <i onClick={() => setOpen(!open)} className={`fa-solid fa-angle-right absolute cursor-pointer -right-3 top-9 px-2 hover:bg-white border-black py-1 border-2 rounded-full  ${open && "rotate-180"}`}></i>
+                    <i onClick={() => dispatch(change())} className={`fa-solid fa-angle-right absolute cursor-pointer -right-3 top-9 px-2 hover:bg-white border-black py-1 border-2 rounded-full  ${open && "rotate-180"}`}></i>
                     <div className="flex gap-x-4 items-center">
                         <h1 className={`text-white origin-left font-medium text-xl duration-200 ${!open && "scale-0"}`}>
                             Dashboard

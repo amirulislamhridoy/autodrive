@@ -37,7 +37,7 @@ const Navbar = ({ children }) => {
 
                             </button>}
                     </div>
-                    <div className={`lg:flex items-center justify-between w-full lg:w-auto lg:order-1 shadow-lg absolute right-0 top-7 lg:static z-10 ${toggle ? 'block' : 'hidden'}`} id="navbar-cta">
+                    <div className={`lg:flex items-center justify-between w-full lg:w-auto lg:order-1 absolute right-0 top-7 lg:static z-10 ${toggle ? 'block' : 'hidden'}`} id="navbar-cta">
                         <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:font-medium lg:border-0 bg-white lg:bg-inherit">
                             <li>
                                 <Link href="/" className={`text-sm font-bold hover:text-[#ffc947] lg:text-white block py-2 pl-3 pr-4 rounded lg:p-0 ${router.route === '/' && 'border-b-2'}`} aria-current="page">HOME</Link>

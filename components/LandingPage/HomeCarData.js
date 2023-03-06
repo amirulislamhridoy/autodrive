@@ -7,7 +7,7 @@ import Loading from '../Loading'
 const HomeCarData = () => {
     const { isLoading, error, data } = useQuery('carData', () =>
         // if I want to use dependence this time will be (useQuery(['repoData', dependence items],.....))
-        fetch('http://localhost:5000/car/getAll').then(res =>
+        fetch('https://autodrive-server.vercel.app/car/getAll').then(res =>
             res.json()
         )
     )
