@@ -8,33 +8,25 @@ import Link from 'next/link';
 import Footer from '../../components/Footer';
 import Loading from '../../components/Loading';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCar } from '../../app/features/toolkit/carSlice';
 
 const AllCarData = () => {
     const router = useRouter()
-    const [user, loading] = useAuthState(auth);
-    const [name, setName] = useState('')
+    const [user, userLoading] = useAuthState(auth);
     const [click, setClick] = useState(false)
-    const [cars, setCars] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
-    const [page, setPage] = useState(0)
-    const [pages, setPages] = useState(0)
-    const [limit, setLimit] = useState(10)
+
+    const dispatch = useDispatch()
+    const {cars} = useSelector(state => state)
+    const { loading, data, error, pages } = cars
+    const [name, setName] = useState(data.name || '')
+    const [page, setPage] = useState(data.page || 0)
+    const [limit, setLimit] = useState(data.limit || 10)
+
     useEffect(() => {
-        setIsLoading(true)
-        axios.get(`http://localhost:5000/car/getAll?name=${name}&page=${page}&limit=${limit}`)
-            .then(res => {
-                setIsLoading(false)
-                console.log(res.data)
-                setCars(res.data.cars)
-                setPages(res.data.pages)
-                setLimit(res.data.limit)
-            })
-            .catch(error => {
-                setIsLoading(false)
-                console.log(error)
-            })
-    }, [click, page, pages, limit])
+        dispatch(fetchCar({ limit, page, name }))
+    }, [limit, name, page])
+
     const pageChangeFn = (type) => {
         if (type === 'next') {
             if ((page + 1) === pages) {
@@ -55,7 +47,7 @@ const AllCarData = () => {
             setClick(!click)
         }
     };
-    if (isLoading || loading) {
+    if (userLoading || loading) {
         return <Loading />
     }
     if (!user) {
@@ -94,7 +86,7 @@ const AllCarData = () => {
                     <h1 className='text-xl sm:text-3xl lg:text-4xl xl:text-5xl text-center font-bold'>WE OFFER BEST CAR</h1>
                     <p className='text-center mt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
                     <div className='mx-3 lg:mx-1 lg:grid grid-cols-2 gap-4 mt-8'>
-                        {cars?.map((car, i) => <CarShortData key={i} car={car}></CarShortData>)}
+                        {data.cars?.map((car, i) => <CarShortData key={i} car={car}></CarShortData>)}
                     </div>
                     <div className='mt-5 text-center'><Link href='/' as='' className='text-2xl border-b-2 border-[#ffc947] text-[#474FA0] hover:border-[#474FA0] pb-2'>Back to home page &gt;</Link></div>
                 </div>
@@ -105,7 +97,7 @@ const AllCarData = () => {
                     {[...Array(pages).keys()].map((p, i) => <button key={i} onClick={() => setPage(p)} className={`border px-2 ${page === p ? 'bg-[#ffc947] cursor-default' : 'hover:bg-[#ffc947]'}`}>{p + 1}</button>)}
                     <button onClick={() => pageChangeFn('next')} className='border px-2 pr-4 hover:bg-[#ffc947] rounded-tr-full rounded-br-full'>Next</button>
                 </div>
-                <select onChange={(e) => setLimit(e.target.value)} className='border py-1 px-2'>
+                <select value={limit} onChange={(e) => setLimit(e.target.value)} className='border py-1 px-2'>
                     <option>10</option>
                     <option>6</option>
                 </select>

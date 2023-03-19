@@ -3,7 +3,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
-import store from '../redux/store';
+import store from '../app/store';
 import axios from 'axios';
 import { signOut } from 'firebase/auth';
 import auth from '../firebase.init';

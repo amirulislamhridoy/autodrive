@@ -5,7 +5,7 @@ import Loading from '../../components/Loading';
 import auth from '../../firebase.init';
 import DashboardLayout from '../../components/Layout/DashboardLayout';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchUser } from '../../redux/userData';
+import { fetchUser } from '../../app/toolkit/userSlice';
 
 const MakeAdmin = () => {
     const state = useSelector(state => state.user.data)

@@ -4,7 +4,7 @@ import Footer from '../../components/Footer'
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {useSelector, useDispatch} from 'react-redux';
-import { change } from "../../redux/dashboardSideBar";
+import { change } from "../../app/features/toolkit/dashboardSideBarSlice";
 
 const DashboardLayout = ({ children }) => {
     const router = useRouter()

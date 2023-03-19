@@ -1,19 +1,22 @@
 import Link from 'next/link';
 import React, { useEffect } from 'react';
-import { useQuery } from 'react-query'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCar } from '../../app/features/toolkit/carSlice';
 import CarShortData from '../Car/CarShortData';
-import Loading from '../Loading'
+import Loading from '../Loading';
 
 const HomeCarData = () => {
-    const { isLoading, error, data } = useQuery('carData', () =>
-        // if I want to use dependence this time will be (useQuery(['repoData', dependence items],.....))
-        fetch('https://autodrive-server.vercel.app/car/getAll').then(res =>
-            res.json()
-        )
-    )
-    if(isLoading){
+    const dispatch = useDispatch()
+    const {loading, data, error} = useSelector(state => state.cars)
+
+    useEffect(() => {
+        dispatch(fetchCar({name: '', page: null, limit: null}))
+    }, [])
+
+    if(loading){
         return <Loading></Loading>
     }
+
     return (
         <section className='bg-[#f4f6fa]'>
             <div className='max-w-7xl mx-auto pt-20 pb-16'>
