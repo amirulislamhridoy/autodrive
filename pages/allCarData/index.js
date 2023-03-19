@@ -12,20 +12,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCar } from '../../app/features/toolkit/carSlice';
 
 const AllCarData = () => {
-    const router = useRouter()
-    const [user, userLoading] = useAuthState(auth);
-    const [click, setClick] = useState(false)
-
     const dispatch = useDispatch()
+    const router = useRouter()
     const {cars} = useSelector(state => state)
     const { loading, data, error, pages } = cars
     const [name, setName] = useState(data.name || '')
     const [page, setPage] = useState(data.page || 0)
     const [limit, setLimit] = useState(data.limit || 10)
+    const [user, userLoading] = useAuthState(auth);
+    const [click, setClick] = useState(false)
 
     useEffect(() => {
         dispatch(fetchCar({ limit, page, name }))
-    }, [limit, name, page])
+    }, [limit, page, click])
 
     const pageChangeFn = (type) => {
         if (type === 'next') {
