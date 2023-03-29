@@ -1,4 +1,3 @@
-// import React from 'react';
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
@@ -46,10 +45,6 @@ const Signup = () => {
         setLoading(true)
         signInWithPopup(auth, provider)
             .then(result => {
-                // const credential = GoogleAuthProvider.credentialFromResult(result);
-                // const token = credential.accessToken;
-                // console.log('credential', credential)
-                // const user = result.user;
                 setLoading(false)
                 setUserData(result)
                 setToggle(false)
