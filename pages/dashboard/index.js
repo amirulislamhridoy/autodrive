@@ -4,7 +4,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import Loading from '../../components/Loading';
 import auth from '../../firebase.init';
 import DashboardLayout from '../../components/Layout/DashboardLayout';
-
 const Index = () => {
     const router = useRouter()
     const [user, loading] = useAuthState(auth);

@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { Provider } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
 import store from '../app/store';
 import axios from 'axios';
 import { signOut } from 'firebase/auth';
@@ -22,13 +22,14 @@ export default function App({ Component, pageProps }) {
   axios.interceptors.response.use(function (response) {
     return response;
   }, function (error) {
-    if(error.response.status === 401 || error.response.status === 404){
+    if (error.response.status === 401 || error.response.status === 404) {
       router.push('/login')
       localStorage.removeItem('token')
       signOut(auth);
     }
     return Promise.reject(error);
   });
+
   return (
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>

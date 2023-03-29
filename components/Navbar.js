@@ -13,7 +13,8 @@ const Navbar = ({ children }) => {
 
     const logoutFn = () => {
         signOut(auth);
-        router.push('/login')
+        router.push('/login');
+        localStorage.removeItem('token')
     }
     return (
         <header className={`${children && 'bg-[#bbbbbb]'} z-50`}>
